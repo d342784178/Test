@@ -22,12 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Test" />
         <module name="test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springtest" target="1.5" />
       <module name="test" target="1.7" />
+      <module name="Test" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

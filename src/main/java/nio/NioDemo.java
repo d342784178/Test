@@ -1,5 +1,6 @@
 package nio;
 
+
 import org.junit.Test;
 
 import java.io.RandomAccessFile;
@@ -13,12 +14,12 @@ import java.nio.channels.SocketChannel;
 public class NioDemo {
     @Test
     public void readFile() throws Exception {
-        RandomAccessFile r          = new RandomAccessFile("/Users/mic/IdeaProjects/webTest/nio/pom.xml", "r");
+        RandomAccessFile r = new RandomAccessFile("/Users/mic/IdeaProjects/webTest/nio/pom.xml", "r");
         //获取一个channel
-        FileChannel      channel    = r.getChannel();
+        FileChannel channel = r.getChannel();
         //声明一个buffer
-        ByteBuffer       byteBuffer = ByteBuffer.allocate(1024);
-        int              read;
+        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+        int        read;
         while ((read = channel.read(byteBuffer)) > 0) {
             //切换到写模式
             byteBuffer.flip();
