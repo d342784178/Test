@@ -9,11 +9,13 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * Desc: ${DESCIPTION} User: DLJ Date: 2016/12/3
+ * Desc:
+ * Author: DLJ
+ * Date:
  */
 public class Server {
     private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
-    private ByteBuffer readBuffer = ByteBuffer.allocate(1024);
+    private ByteBuffer readBuffer  = ByteBuffer.allocate(1024);
 
     public Server() {
         new Thread(new Runnable() {
@@ -48,8 +50,8 @@ public class Server {
         while (true) {
             int ready = selector.select();
             if (ready > 0) {
-                Set<SelectionKey> selectionKeys = selector.selectedKeys();
-                Iterator<SelectionKey> iterator = selectionKeys.iterator();
+                Set<SelectionKey>      selectionKeys = selector.selectedKeys();
+                Iterator<SelectionKey> iterator      = selectionKeys.iterator();
                 while (iterator.hasNext()) {
                     SelectionKey selectionKey = iterator.next();
                     iterator.remove();

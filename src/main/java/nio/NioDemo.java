@@ -5,12 +5,16 @@ import org.junit.Test;
 
 import java.io.RandomAccessFile;
 import java.net.InetSocketAddress;
-import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
+/**
+ * Desc: nio测试用例
+ * Author: DLJ
+ * Date:
+ */
 public class NioDemo {
     @Test
     public void readFile() throws Exception {

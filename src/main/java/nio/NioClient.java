@@ -9,6 +9,11 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Desc: 多用户聊天客户端
+ * Author: DLJ
+ * Date:
+ */
 public class NioClient {
     private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
     private ByteBuffer readBuffer  = ByteBuffer.allocate(1024);
@@ -30,11 +35,16 @@ public class NioClient {
         }
     }
 
+    /**
+     * 类似server的init方法过程
+     * @throws Exception
+     */
     private void init() throws Exception {
         SocketChannel channel = SocketChannel.open();
         channel.configureBlocking(false);
         Selector selector = Selector.open();
         channel.register(selector, SelectionKey.OP_CONNECT);
+        //注意connect必须在reigster之后调 否则没有isConnectable事件
         channel.connect(new InetSocketAddress("localhost", 5555));
         while (true) {
             int ready = selector.select();
