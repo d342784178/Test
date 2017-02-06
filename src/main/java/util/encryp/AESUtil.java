@@ -49,7 +49,6 @@ public class AESUtil {
             byte[] cipherByte = c.doFinal(src);
             return parseByte2HexStr(cipherByte);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
@@ -76,7 +75,6 @@ public class AESUtil {
             byte[] cipherByte = c.doFinal(buff);
             return new String(cipherByte);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;

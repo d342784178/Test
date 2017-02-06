@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 类DateUtil.java的实现描述：TODO 类实现描述
+ * 类DateUtil.java的实现描述
  * @author zhh 2015年4月21日 下午9:00:57
  */
 public class DateUtil {
