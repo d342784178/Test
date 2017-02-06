@@ -12,7 +12,6 @@ public class IPUtil {
 
     /**
      * 获取本机的IP
-     *
      * @return Ip地址
      */
     public static String getLocalHostIP() {
@@ -25,13 +24,11 @@ public class IPUtil {
         } catch (Exception ex) {
             ip = "";
         }
-
         return ip;
     }
 
     /**
      * 或者主机名：
-     *
      * @return
      */
     public static String getLocalHostName() {
@@ -50,11 +47,9 @@ public class IPUtil {
 
     /**
      * 获得本地所有的IP地址
-     *
      * @return
      */
     public static String[] getAllLocalHostIP() {
-
         String[] ret = null;
         try {
             /**获得主机名*/
@@ -70,11 +65,9 @@ public class IPUtil {
                     }
                 }
             }
-
         } catch (Exception ex) {
             ret = null;
         }
-
         return ret;
     }
 
@@ -83,9 +76,7 @@ public class IPUtil {
      * 取Proxy-Client-IP，如果为空，再取<br>
      * WL-Proxy-Client-IP，如果为空，再取request.getRemoteAddr() <br>
      * 注意：如果以上任何一种方式获取到的ip中有, 逗号分隔出的多个IP地址，则取第一个合法的IP地址（非unknown的地址)
-     *
      * @param request
-     *
      * @return
      */
     public static String getRemoteIP(HttpServletRequest request) {
@@ -107,7 +98,6 @@ public class IPUtil {
                     ip = ips[i];
                     break;
                 }
-
             }
         }
         return ip;
@@ -115,10 +105,8 @@ public class IPUtil {
 
     /**
      * 判断targetIp和网段是否匹配
-     *
      * @param targetIp
      * @param network  IP/Subnet子网切割表示法
-     *
      * @return
      */
 
@@ -143,9 +131,7 @@ public class IPUtil {
 
     /**
      * 将127.0.0.1形式的IP地址转换成十进制整数，这里没有进行任何错误处理
-     *
      * @param strIp
-     *
      * @return
      */
     public static long ipToLong(String strIp) {
@@ -166,7 +152,6 @@ public class IPUtil {
     public static String getRealIp() {
         String localip = null;// 本地IP，如果没有配置外网IP则返回它
         String netip   = null;// 外网IP
-
         try {
             Enumeration<NetworkInterface> netInterfaces =
                     NetworkInterface.getNetworkInterfaces();
@@ -191,13 +176,11 @@ public class IPUtil {
                     }
                 }
             }
-
             if (netip != null && !"".equals(netip)) {
                 return netip;
             } else {
                 return localip;
             }
-
         } catch (SocketException e) {
             return null;
         }
