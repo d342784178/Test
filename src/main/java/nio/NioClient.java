@@ -37,7 +37,8 @@ public class NioClient {
 
     /**
      * 类似server的init方法过程
-     * @throws Exception
+     *
+     * @exception Exception
      */
     private void init() throws Exception {
         SocketChannel channel = SocketChannel.open();
@@ -45,7 +46,7 @@ public class NioClient {
         Selector selector = Selector.open();
         channel.register(selector, SelectionKey.OP_CONNECT);
         //注意connect必须在reigster之后调 否则没有isConnectable事件
-        channel.connect(new InetSocketAddress("localhost", 5555));
+        channel.connect(new InetSocketAddress("localhost", 55555));
         while (true) {
             int ready = selector.select();
             if (ready > 0) {
@@ -53,34 +54,46 @@ public class NioClient {
                 while (iterator.hasNext()) {
                     SelectionKey selectionKey = iterator.next();
                     iterator.remove();
-                    if (selectionKey.isConnectable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        if (socketChannel.isConnectionPending()) {
-                            socketChannel.finishConnect();
-                        }
-                        socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-                    } else if (selectionKey.isReadable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        socketChannel.configureBlocking(false);
-                        readBuffer.clear();
-                        int read = socketChannel.read(readBuffer);
-                        if (read > 0) {
-                            System.out.println(new String(readBuffer.array(), 0, read));
-                        }
-                    } else if (selectionKey.isWritable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        socketChannel.configureBlocking(false);
-                        writeBuffer.flip();
-                        while (writeBuffer.hasRemaining()) {
-                            socketChannel.write(writeBuffer);
-                        }
-                        writeBuffer.clear();
-                    }
+                    handle(selector, selectionKey);
                 }
             }
         }
 
 
+    }
+
+    /**
+     * 处理相应事件
+     *
+     * @param selector
+     * @param selectionKey
+     *
+     * @exception IOException
+     */
+    private void handle(Selector selector, SelectionKey selectionKey) throws IOException {
+        if (selectionKey.isConnectable()) {
+            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+            if (socketChannel.isConnectionPending()) {
+                socketChannel.finishConnect();
+            }
+            socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        } else if (selectionKey.isReadable()) {
+            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+            socketChannel.configureBlocking(false);
+            readBuffer.clear();
+            int read = socketChannel.read(readBuffer);
+            if (read > 0) {
+                System.out.println(new String(readBuffer.array(), 0, read));
+            }
+        } else if (selectionKey.isWritable()) {
+            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+            socketChannel.configureBlocking(false);
+            writeBuffer.flip();
+            while (writeBuffer.hasRemaining()) {
+                socketChannel.write(writeBuffer);
+            }
+            writeBuffer.clear();
+        }
     }
 
     public static void main(String args[]) throws IOException {

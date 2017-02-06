@@ -60,7 +60,7 @@ public class NioServer {
     private void init() throws Exception {
         //开启端口坚挺
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        serverSocketChannel.socket().bind(new InetSocketAddress(5555));
+        serverSocketChannel.socket().bind(new InetSocketAddress(55555));
         //切换非阻塞模式(selector必须使用非阻塞模式)
         serverSocketChannel.configureBlocking(false);
         Selector selector = Selector.open();
@@ -77,40 +77,53 @@ public class NioServer {
                     SelectionKey selectionKey = iterator.next();
                     //注意:必须手动remove作为消耗事件!!
                     iterator.remove();
-                    if (selectionKey.isAcceptable()) {
-                        //获取socketchannel
-                        SocketChannel socketChannel = serverSocketChannel.accept();
-                        socketChannel.configureBlocking(false);
-                        //把这个socketchannel注册到selector中管理
-                        socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-                        System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
-                        //添加到clients集合中
-                        clients.put(socketChannel, ByteBuffer.allocate(1024));
-                    } else if (selectionKey.isReadable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        socketChannel.configureBlocking(false);
-                        msgBuffer.clear();
-                        int read = socketChannel.read(msgBuffer);
-                        //因为会不断进入读写的判断条件 所以必须判断是否有读入内容
-                        if (read > 0) {
-                            addName(socketChannel.socket());
-                            System.out.println(new String(msgBuffer.array(), 0, msgBuffer.position()));
-                            dispatcherMsg();
-                        }
-                    } else if (selectionKey.isWritable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        ByteBuffer    byteBuffer    = clients.get(selectionKey.channel());
-                        socketChannel.configureBlocking(false);
-                        byteBuffer.flip();
-                        //因为会不断进入读写的判断条件 所以必须判断是否有内容可供写出
-                        while (byteBuffer.hasRemaining()) {
-                            socketChannel.write(byteBuffer);
-                        }
-                        //写完 清空缓存
-                        byteBuffer.clear();
-                    }
+                    handle(serverSocketChannel, selector, selectionKey);
                 }
             }
+        }
+    }
+
+    /**
+     * 处理相应事件
+     *
+     * @param serverSocketChannel
+     * @param selector
+     * @param selectionKey
+     *
+     * @exception IOException
+     */
+    private void handle(ServerSocketChannel serverSocketChannel, Selector selector, SelectionKey selectionKey) throws IOException {
+        if (selectionKey.isAcceptable()) {
+            //获取socketchannel
+            SocketChannel socketChannel = serverSocketChannel.accept();
+            socketChannel.configureBlocking(false);
+            //把这个socketchannel注册到selector中管理
+            socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+            System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
+            //添加到clients集合中
+            clients.put(socketChannel, ByteBuffer.allocate(1024));
+        } else if (selectionKey.isReadable()) {
+            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+            socketChannel.configureBlocking(false);
+            msgBuffer.clear();
+            int read = socketChannel.read(msgBuffer);
+            //因为会不断进入读写的判断条件 所以必须判断是否有读入内容
+            if (read > 0) {
+                addName(socketChannel.socket());
+                System.out.println(new String(msgBuffer.array(), 0, msgBuffer.position()));
+                dispatcherMsg();
+            }
+        } else if (selectionKey.isWritable()) {
+            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
+            ByteBuffer    byteBuffer    = clients.get(selectionKey.channel());
+            socketChannel.configureBlocking(false);
+            byteBuffer.flip();
+            //因为会不断进入读写的判断条件 所以必须判断是否有内容可供写出
+            while (byteBuffer.hasRemaining()) {
+                socketChannel.write(byteBuffer);
+            }
+            //写完 清空缓存
+            byteBuffer.clear();
         }
     }
 
@@ -136,10 +149,14 @@ public class NioServer {
     private void dispatcherMsg() {
         //复制msgBuffer 每个channel各一个
         for (Map.Entry<Channel, ByteBuffer> entry : clients.entrySet()) {
-            ByteBuffer byteBuffer = entry.getValue();
-            byte[]     bytes      = new byte[msgBuffer.position()];
-            System.arraycopy(msgBuffer.array(), 0, bytes, 0, msgBuffer.position());
-            byteBuffer.put(bytes);
+            try {
+                ByteBuffer byteBuffer = entry.getValue();
+                byte[]     bytes      = new byte[msgBuffer.position()];
+                System.arraycopy(msgBuffer.array(), 0, bytes, 0, msgBuffer.position());
+                byteBuffer.put(bytes);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
