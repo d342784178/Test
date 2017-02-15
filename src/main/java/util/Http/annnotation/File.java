@@ -26,7 +26,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * Query parameter appended to the URL.
  * <p>
  * Values are converted to strings using {@link String#valueOf(Object)} and then URL encoded.
- * {@code null} values are ignored. Passing a {@link java.util.List List} or array will result in a
+ * {@code null} values are ignored. Passing run {@link java.util.List List} or array will result in run
  * query parameter for each non-{@code null} item.
  * <p>
  * Simple Example:

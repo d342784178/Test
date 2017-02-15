@@ -71,7 +71,7 @@ public class NetHelper {
             }
             return (T) object;
         } else {
-            throw new IllegalArgumentException("clazz is not a net-interface");
+            throw new IllegalArgumentException("clazz is not run net-interface");
         }
     }
 

@@ -73,11 +73,7 @@ public class HttpUtil {
             LayeredConnectionSocketFactory sslSF =
                     new SSLConnectionSocketFactory(sslContext, SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
             registryBuilder.register("https", sslSF);
-        } catch (KeyStoreException e) {
-            throw new RuntimeException(e);
-        } catch (KeyManagementException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
         Registry<ConnectionSocketFactory> registry = registryBuilder.build();
@@ -99,9 +95,8 @@ public class HttpUtil {
     }
 
     private static String execute(boolean post, RequestMap map) throws IOException {
-        String              responseBody = null;
-        CloseableHttpClient httpClient   = getHttpClient();
-        try {
+        String responseBody = null;
+        try (CloseableHttpClient httpClient = getHttpClient();) {
             //请求数据
             CloseableHttpResponse response = httpClient.execute(getMethod(post, map));
             int                   status   = response.getStatusLine().getStatusCode();
@@ -113,8 +108,6 @@ public class HttpUtil {
             }
         } catch (Exception ex) {
             throw ex;
-        } finally {
-            httpClient.close();
         }
         return responseBody;
     }

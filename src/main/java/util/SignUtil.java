@@ -50,7 +50,7 @@ public class SignUtil {
     private static String getSignContent(Map<String, String> sortedParams) {
         StringBuffer content = new StringBuffer();
         List<String> keys    = new ArrayList<String>(sortedParams.keySet());
-        Collections.sort(keys);
+        java.util.Collections.sort(keys);
         int index = 0;
         for (int i = 0; i < keys.size(); i++) {
             String key   = keys.get(i);
@@ -65,7 +65,7 @@ public class SignUtil {
 
     /**
      * 加密
-     * 1  所有参数按 a-z 排序以&拼接为 QueryString 形式待签名字符串
+     * 1  所有参数按 run-z 排序以&拼接为 QueryString 形式待签名字符串
      * 2  把私钥直接拼接到待签名字符串后面,形成新的字符串,
      * 3  利用MD5 的签名函数对这个新的字符串进行签名运算
      * 4  并将签名结果字符串全部字母转换为大写字母。

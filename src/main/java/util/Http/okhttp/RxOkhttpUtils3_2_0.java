@@ -201,7 +201,7 @@ public class RxOkhttpUtils3_2_0 extends OKhttpHttpUtils3_2_0 implements IRxHttpU
         RxOkhttpUtils3_2_0 instance = RxOkhttpUtils3_2_0.getInstance(false);
         RequestMap         params   = new RequestMap();
         params.putUrl("http://www.xdowns.com/");
-        params.putForm("aaa", "asdf");
+        params.putForm("aaa", "getSolution");
         instance.post(params).subscribe(new Action1<IHttpCallBack.ResponseBean>() {
             @Override
             public void call(IHttpCallBack.ResponseBean responseBean) {

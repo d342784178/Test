@@ -1,11 +1,9 @@
 package util;
 
-import com.sun.istack.internal.Nullable;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DurationFieldType;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,37 +12,18 @@ import java.util.Date;
  * @author zhh 2015年4月21日 下午9:00:57
  */
 public class DateUtil {
-    public static Date toDate(String dateStr, @Nullable String dateFormat) throws Exception {
-        String str = dateStr.trim();
-        if (StringUtils.isEmpty(dateFormat)) {
-            if (str.matches("\\d{4}-\\d{1,2}-\\d{1,2}\\s+\\d{1,2}:\\d{1,2}:\\d{1,2}")) {
-                dateFormat = "yyyy-MM-dd HH:mm:ss";
-            } else if (str.matches("\\d{4}-\\d{1,2}-\\d{1,2}")) {
-                dateFormat = "yyyy-MM-dd";
-            } else {
-                throw new IllegalArgumentException("默认格式无法解析");
-            }
+    public static Date parseOf(String dateStr) throws Exception {
+        String str        = dateStr.trim();
+        String dateFormat = null;
+        if (str.matches("\\d{4}-\\d{1,2}-\\d{1,2}\\s+\\d{1,2}:\\d{1,2}:\\d{1,2}")) {
+            dateFormat = "yyyy-MM-dd HH:mm:ss";
+        } else if (str.matches("\\d{4}-\\d{1,2}-\\d{1,2}")) {
+            dateFormat = "yyyy-MM-dd";
+        } else {
+            throw new IllegalArgumentException("默认格式无法解析");
         }
-        SimpleDateFormat df = new SimpleDateFormat(dateFormat);
-        return df.parse(dateStr);
-    }
+        return DateUtils.parseDate(str, dateFormat);
 
-    public static Date toDate(String dateStr) throws Exception {
-        return toDate(dateStr, null);
-    }
-
-    public static Date toDate(long m) {
-        Calendar c1 = Calendar.getInstance();
-        c1.setTimeInMillis(m);
-        return c1.getTime();
-    }
-
-    public static String formatDate(Date date, String newFormat) {
-        if ((date == null) || (newFormat == null)) {
-            return null;
-        }
-        SimpleDateFormat formatter = new SimpleDateFormat(newFormat);
-        return formatter.format(date);
     }
 
     /**
@@ -93,7 +72,7 @@ public class DateUtil {
     }
 
     /**
-     * 获取当前时间一小时后的时间
+     * 获取当前x天x时x分后的时间
      */
     public static Date getTargetTime(int day, int hour, int minutes) {
         return DateTime.now().withFieldAdded(DurationFieldType.days(), day).withFieldAdded(DurationFieldType.hours(),
