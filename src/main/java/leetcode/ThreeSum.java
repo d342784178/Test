@@ -1,7 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,52 +11,60 @@ import java.util.List;
  * Time: 16:25
  */
 public class ThreeSum {
-    //TODO 去重 优化
     private List<List<Integer>> all = new ArrayList<>();
 
-    public List<List<Integer>> threeSum(int[] nums) {
-        ArrayList<Integer> numsList = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
-            numsList.add(nums[i]);
+    public List<List<Integer>> threeSum(int[] num) {
+        if (num == null || num.length < 3) {
+            return all;
         }
-        Collections.sort(numsList);
-        getSolution(numsList, 3, 0, null);
+
+        Arrays.sort(num);
+
+        int len = num.length;
+        for (int i = 0; i < len - 2; i++) {
+            if (i > 0 && num[i] == num[i - 1]) {
+                continue;
+            }
+            find(num, i + 1, len - 1, num[i]); //寻找两个数与num[i]的和为0
+        }
 
         return all;
     }
 
+    //双指针法
+    public void find(int[] num, int begin, int end, int target) {
+        int l = begin, r = end;
+        while (l < r) {
+            if (num[l] + num[r] + target == 0) {
+                List<Integer> ans = new ArrayList<Integer>();
+                ans.add(target);
+                ans.add(num[l]);
+                ans.add(num[r]);
+                all.add(ans); //放入结果集中
 
-    /**
-     * @param nums 数组
-     * @param n    n个数和
-     * @param sum  目标值
-     * @param has  传null
-     */
-    public void getSolution(List<Integer> nums, int n, int sum, List<Integer> has) {
-        if (n == 1) {
-            if (nums.contains(sum)) {
-                has.add(sum);
-                all.add(has);
-                System.out.println(has);
-            }
-            return;
-        }
-        for (int i = 0; i < nums.size(); i++) {
-            Integer            integer   = nums.get(i);
-            ArrayList<Integer> arrayList = new ArrayList<>(nums);
-            arrayList.remove(integer);
-            ArrayList<Integer> newHas = null;
-            if (has != null) {
-                newHas = new ArrayList<>(has);
+                //去重
+                while (l < r && num[l] == num[l + 1]) {
+                    l++;
+                }
+                while (l < r && num[r] == num[r - 1]) {
+                    r--;
+                }
+                l++;
+                r--;
+            } else if (num[l] + num[r] + target < 0) {
+                l++;
             } else {
-                newHas = new ArrayList<>();
+                r--;
             }
-            newHas.add(integer);
-            getSolution(arrayList.subList(i, nums.size() - 1), n - 1, sum - integer, newHas);
         }
     }
 
     public static void main(String args[]) {
-        System.out.println(new ThreeSum().threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(new ThreeSum().threeSum(new int[]{9, 14, 0, -8, 10, 0, 2, 9, -8, 13, -3, 1, 10, -13, 4, 3,
+                -3, -11, 8, -13, -4, -6, 5, -10, -14, 0, 3, -9, -9, -7, -11, 8, -8, -4, -15, 9, 11, 3, 3, -11, -7, 7,
+                5, -12, 1, -14, -1, 13, -9, -8, 7, 2, -6, -11, -1, -5, -4, -13, -7, 2, -13, -2, -5, -6, 9, -12, 10,
+                -2, -2, -10, 2, 6, 4, 14, 2, -10, -15, -14, 10, -9, -15, -6, 0, -6, -2, 14, -3, 9, 8, -3, -12, 10, 2,
+                -9, 11, -3, -6, -2, 10, 7, 3, -11, -10, -8, -12, -1}));
+//        new ThreeSum().twoSum2(Arrays.asList(2, -1, 1), -2);
     }
 }
