@@ -1,7 +1,9 @@
 package leetcode;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Desc: 去数组的有序组合
@@ -31,8 +33,8 @@ public class Subsets {
         for (int i = 1; i <= nBit; i++) {//1~8
             ArrayList<Integer> aa = new ArrayList<>();
             for (int j = 0; j < nCnt; j++) {//通过位运算  取出二进制位对应的下标
-                //i==8时
-                //001&111 010&111 001&111
+                //i==8时 001&111 010&111 001&111
+                //i==7时 001&110 010&110 100&110
                 if ((1 << j & i) != 0) {
                     aa.add(ints[j]);
                 }
@@ -43,74 +45,30 @@ public class Subsets {
     }
 
 
-    private Map<Integer, Map<Integer, List<Integer>>> allMap = new HashMap<>();
-
-    private int maxValue;
-    private int add;
-
-    //思路:列出全排列(无序) 利用hashcode去重
-    //效率低!! TODO 无需去重 直接获得有序的
+    //=========回溯法
     public List<List<Integer>> subsets2(int[] nums) {
-        for (int num : nums) {
-            if (maxValue < num) {
-                maxValue = num;
-            }
-        }
-        int minValue = maxValue;
-        for (int num : nums) {
-            if (minValue > num) {
-                minValue = num;
-            }
-        }
-        maxValue = maxValue - minValue;
-        add = 0 - minValue;
-
-        List<Integer> integers = new ArrayList<>();
-        allMap.put(0, new HashMap<>(0));
+        ArrayList<Integer> objects = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            integers.add(nums[i]);
-            int n = nums.length - i;
-            allMap.put(n, new HashMap<>(512));
+            objects.add(nums[i]);
         }
-        for (int i = 0; i < nums.length / 2 + 1; i++) {
-            int n = nums.length - i;
-            getA(Collections.emptyList(), integers, n);
-        }
-        List<List<Integer>> objects1 = new ArrayList<>();
-        for (Map.Entry<Integer, Map<Integer, List<Integer>>> entry : allMap.entrySet()) {
-            Map<Integer, List<Integer>> value = entry.getValue();
-            for (Map.Entry<Integer, List<Integer>> listEntry : value.entrySet()) {
-                objects1.add(listEntry.getValue());
-            }
-        }
-        return objects1;
+        subsets(objects, new ArrayList<>());
+        return all;
     }
 
+    List<List<Integer>> all = new ArrayList<>();
 
-    public void getA(List<Integer> has, List<Integer> nums, int n) {
-        if (n <= 0) {
-            Map<Integer, List<Integer>> integerListMap = allMap.get(nums.size());
-            integerListMap.put(gethash(nums), nums);
-
-            Map<Integer, List<Integer>> map = allMap.get(has.size());
-            map.put(gethash(has), has);
-        } else {
-            for (Integer integer : nums) {
-                ArrayList<Integer> integers = new ArrayList<>(nums);
-                integers.remove(integer);
-                ArrayList<Integer> newHas = new ArrayList<>(has);
-                newHas.add(integer);
-                getA(newHas, integers, n - 1);
-            }
+    public void subsets(List<Integer> nums, List<Integer> has) {
+        if (nums.size() == 0) {
+            all.add(has);
+            return;
         }
-    }
+        Integer integer = nums.get(0);
+        nums.remove(integer);
 
-    public int gethash(List<Integer> array) {
-        int[] ints = new int[maxValue + 1];
-        for (Integer integer : array) {
-            ints[integer + add] = 1;
-        }
-        return Arrays.hashCode(ints);
+        ArrayList<Integer> has1 = new ArrayList<>(has);
+        ArrayList<Integer> has2 = new ArrayList<>(has);
+        has2.add(integer);
+        subsets(new ArrayList<>(nums), has2);
+        subsets(new ArrayList<>(nums), has1);
     }
-
 }
