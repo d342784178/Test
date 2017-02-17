@@ -25,6 +25,7 @@ public class ThreeSum {
             if (i > 0 && num[i] == num[i - 1]) {
                 continue;
             }
+            //转换为2sum问题 再用双指针法
             find(num, i + 1, len - 1, num[i]); //寻找两个数与num[i]的和为0
         }
 
