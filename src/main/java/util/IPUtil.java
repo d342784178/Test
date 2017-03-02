@@ -4,26 +4,47 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.Enumeration;
 
 
 public class IPUtil {
 
+    public static void main(String args[]) throws Exception{
+        System.out.println(getLocalMac());
+    }
+
+    public static String getLocalMac() throws Exception {
+        InetAddress ia = InetAddress.getLocalHost();
+        //获取网卡，获取地址
+        byte[]       mac = NetworkInterface.getByInetAddress(ia).getHardwareAddress();
+        StringBuffer sb  = new StringBuffer("");
+        for (int i = 0; i < mac.length; i++) {
+            if (i != 0) {
+                sb.append("-");
+            }
+            //字节转换为整数
+            int    temp = mac[i] & 0xff;
+            String str  = Integer.toHexString(temp);
+            if (str.length() == 1) {
+                sb.append("0" + str);
+            } else {
+                sb.append(str);
+            }
+        }
+        return sb.toString();
+    }
 
     /**
      * 获取本机的IP
      * @return Ip地址
      */
-    public static String getLocalHostIP() {
+    public static String getLocalHostIP() throws UnknownHostException {
         String ip;
-        try {
-            /**返回本地主机。*/
-            InetAddress addr = InetAddress.getLocalHost();
-            /**返回 IP 地址字符串（以文本表现形式）*/
-            ip = addr.getHostAddress();
-        } catch (Exception ex) {
-            ip = "";
-        }
+        /**返回本地主机。*/
+        InetAddress addr = InetAddress.getLocalHost();
+        /**返回 IP 地址字符串（以文本表现形式）*/
+        ip = addr.getHostAddress();
         return ip;
     }
 

@@ -13,6 +13,18 @@ import java.util.List;
 public class Rabbit2 {
 
     //    使用dp方式求解
+
+//    d(1)=d(0)+x*steps[0]?
+//    d(2)=d(1)+x*steps[1]?
+//    d(3)=d(2)+x*steps[2]?
+//
+//    d(i)=d(i-1)+x*steps[i-1]?   total-d(i-1)>=x*steps[i-1]
+//
+//    d(i)=j i:用i种跳法 j:能爬到的层数
+//
+//    d(1)表明 用 1 1种跳法 能爬到的层数
+//    d(2)表示 用1 2 2种跳法 能爬到的层数
+
     private List<List<Integer>> all = new ArrayList<>();
 
     private int getNum(int target, int[] steps) {
@@ -42,6 +54,6 @@ public class Rabbit2 {
     }
 
     public static void main(String args[]) {
-        System.out.println(new Rabbit2().getNum(11, new int[]{3, 2, 1}));
+        System.out.println(new Rabbit2().getNum(16, new int[]{4, 3, 2, 1}));
     }
 }
