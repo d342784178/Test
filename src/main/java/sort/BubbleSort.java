@@ -10,8 +10,8 @@ package sort;
 public class BubbleSort implements SortStrategy {
     @Override
     public int[] sort(int[] array) {
-        while (true) {
-            boolean notBreak = false;
+        int jjj = 0;
+        for (int j = 0; j < array.length - jjj; ) {
             for (int i = 0; i < array.length - 1; i++) {
                 int     temp;
                 Integer left  = array[i];
@@ -19,13 +19,10 @@ public class BubbleSort implements SortStrategy {
                 if (left > right) {
                     temp = left;
                     array[i] = right;
-                    array[i+1] = temp;
-                    notBreak = true;
+                    array[i + 1] = temp;
                 }
             }
-            if (!notBreak) {
-                break;
-            }
+            jjj++;
         }
         return array;
     }
