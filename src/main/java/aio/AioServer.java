@@ -1,28 +1,27 @@
 package aio;
 
-import com.sun.tools.corba.se.idl.toJavaPortable.Helper;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.StandardSocketOptions;
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.channels.AsynchronousChannelGroup;
 import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
-//import java.nio.channels.WritePendingException;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Executors;
 
+//import java.nio.channels.WritePendingException;
+
 public class AioServer {
     private final AsynchronousServerSocketChannel server;
+
     //写队列，因为当前一个异步写调用还没完成之前，调用异步写会抛WritePendingException
     //所以需要一个写队列来缓存要写入的数据，这是AIO比较坑的地方
     private final Queue<ByteBuffer> queue   = new LinkedList<ByteBuffer>();
+
     private       boolean           writing = false;
 
     public static void main(String[] args) throws IOException {
@@ -32,7 +31,8 @@ public class AioServer {
 
     public AioServer() throws IOException {
         //设置线程数为CPU核数
-        AsynchronousChannelGroup channelGroup = AsynchronousChannelGroup.withFixedThreadPool(Runtime.getRuntime().availableProcessors(), Executors.defaultThreadFactory());
+        AsynchronousChannelGroup channelGroup = AsynchronousChannelGroup.withFixedThreadPool(Runtime.getRuntime()
+                .availableProcessors(), Executors.defaultThreadFactory());
         server = AsynchronousServerSocketChannel.open(channelGroup);
         //重用端口
         server.setOption(StandardSocketOptions.SO_REUSEADDR, true);

@@ -1,7 +1,6 @@
 package util.Http.okhttp;
 
 
-import com.sun.tools.javac.util.Pair;
 import okhttp3.Headers;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -11,6 +10,7 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import util.Http.IHttpCallBack;
 import util.Http.IRxHttpUtils;
+import util.Http.Pair;
 import util.Http.RequestMap;
 
 import java.io.FileOutputStream;
@@ -97,7 +97,7 @@ public class RxOkhttpUtils3_2_0 extends OKhttpHttpUtils3_2_0 implements IRxHttpU
                     @Override
                     public void call(final IHttpCallBack.ResponseBean responseBean) {//响应码不是200
                         // 则显示toast
-                        printLog(params, responseBean.pair.snd);
+                        printLog(params, responseBean.pair.key);
                     }
                 });
     }
@@ -205,7 +205,7 @@ public class RxOkhttpUtils3_2_0 extends OKhttpHttpUtils3_2_0 implements IRxHttpU
         instance.post(params).subscribe(new Action1<IHttpCallBack.ResponseBean>() {
             @Override
             public void call(IHttpCallBack.ResponseBean responseBean) {
-                System.out.println(responseBean.pair.snd);
+                System.out.println(responseBean.pair.key);
             }
         });
     }
