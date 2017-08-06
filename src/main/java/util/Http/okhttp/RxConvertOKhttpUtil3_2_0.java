@@ -44,11 +44,11 @@ public class RxConvertOKhttpUtil3_2_0 extends RxOkhttpUtils3_2_0 implements
                     @Override
                     public void call(Subscriber<? super T> subscriber) {
                         try {
-                            T t = GsonTools.jsonToBean(responseBean.pair.snd, clazz);
+                            T t = GsonTools.jsonToBean(responseBean.pair.key, clazz);
                             subscriber.onNext(t);
                             subscriber.onCompleted();
                         } catch (Exception e) {
-                            subscriber.onError(new Throwable(responseBean.pair.snd));
+                            subscriber.onError(new Throwable(responseBean.pair.key));
                             e.printStackTrace();
                         }
                     }

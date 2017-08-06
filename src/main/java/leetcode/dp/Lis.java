@@ -1,7 +1,8 @@
 package leetcode.dp;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,48 +16,38 @@ public class Lis {
     //思路: map中存放所有子序列 key为下标
     //遍历数组 再遍历map中的子序列 如果能构成非降序列 则添加到map中存放的序列中
 
-    private Map<Integer, List<Integer>> map = new HashMap<>();
+    private static Map<Integer, List<Integer>> map = Maps.newHashMap();
 
     //i,j表示数组长度
     //d(i) = max{1, d(j)+1},其中j<i,array[j]<=array[i]
-    private List<Integer> getLonggest(int[] array) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            arrayList.add(array[i]);
+    private List<Integer> getLonggest(int[] array, List<Integer> lists) {
+        if (lists == null) {
+            lists = Lists.newArrayList();
         }
-        sdf(arrayList, 0);
-        List<Integer> longgest = null;
-        for (Map.Entry<Integer, List<Integer>> integerListEntry : map.entrySet()) {
-            List<Integer> value = integerListEntry.getValue();
-            System.out.println(value);
-            if (longgest == null) {
-                longgest = value;
-            } else {
-                if (value.size() > longgest.size()) {
-                    longgest = value;
-                }
-            }
+        List<Integer> tempList = Lists.newArrayList();
+        tempList.addAll(lists);
+        int[] ints = new int[array.length - 1];
+        System.arraycopy(array, 0, ints, 0, array.length - 1);
+        if (lists.isEmpty() || array[array.length - 1] < lists.get(0)) {
+            tempList.add(0, array[array.length - 1]);
+        } else {
+            tempList.clear();
+            tempList.add(0, array[array.length - 1]);
         }
-        return longgest;
+
+        if (tempList.size() != lists.size() + 1) {
+            map.put(lists.size(), lists);
+        }
+        if (array.length == 1) {
+            return lists;
+        } else {
+            return getLonggest(ints, tempList);
+        }
     }
 
-    private void sdf(List<Integer> array, int index) {
-        if (index > array.size() - 1) {
-            return;
-        }
-        Integer integer = array.get(index);
-        map.put(index, new ArrayList<>());
-        for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
-            List<Integer> value = entry.getValue();
-            if (value.size() == 0 || integer > value.get(value.size() - 1)) {
-                value.add(integer);
-            }
-        }
-        sdf(array, index + 1);
-
-    }
 
     public static void main(String args[]) {
-        System.out.println(new Lis().getLonggest(new int[]{5, 3, 4, 8, 6, 7}));
+        new Lis().getLonggest(new int[]{5, 3, 4, 8, 6, 7}, null);
+        System.out.println(map);
     }
 }
