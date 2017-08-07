@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @auth DLJ
  * @createDate 2017/8/4
  */
-public class ConditionTest2 {
+public class ConditionDemo {
     public static void main(String[] args) {
         Good good = new Good();
         new AA(false, good).start();
