@@ -20,9 +20,9 @@ public class AioServer {
 
     //写队列，因为当前一个异步写调用还没完成之前，调用异步写会抛WritePendingException
     //所以需要一个写队列来缓存要写入的数据，这是AIO比较坑的地方
-    private final Queue<ByteBuffer> queue   = new LinkedList<ByteBuffer>();
+    private final Queue<ByteBuffer> queue = new LinkedList<ByteBuffer>();
 
-    private       boolean           writing = false;
+    private boolean writing = false;
 
     public static void main(String[] args) throws IOException {
         AioServer xiaona = new AioServer();

@@ -1,8 +1,8 @@
 package util;
 
 import org.apache.commons.lang3.time.DateUtils;
-import org.joda.time.DateTime;
-import org.joda.time.DurationFieldType;
+//import org.joda.time.DateTime;
+//import org.joda.time.DurationFieldType;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -71,13 +71,13 @@ public class DateUtil {
         return sb.toString();
     }
 
-    /**
-     * 获取当前x天x时x分后的时间
-     */
-    public static Date getTargetTime(int day, int hour, int minutes) {
-        return DateTime.now().withFieldAdded(DurationFieldType.days(), day).withFieldAdded(DurationFieldType.hours(),
-                hour).withFieldAdded(DurationFieldType.minutes(), minutes).toDate();
-    }
+//    /**
+//     * 获取当前x天x时x分后的时间
+//     */
+//    public static Date getTargetTime(int day, int hour, int minutes) {
+//        return DateTime.now().withFieldAdded(DurationFieldType.days(), day).withFieldAdded(DurationFieldType.hours(),
+//                hour).withFieldAdded(DurationFieldType.minutes(), minutes).toDate();
+//    }
 
     /**
      * 两个时间比较
@@ -100,17 +100,17 @@ public class DateUtil {
         }
     }
 
-    /**
-     * 传入的日期是否在指定时间内
-     * @param day
-     * @param hour
-     * @param minutes
-     * @return
-     */
-    public static boolean isDateInSpecial(int day, int hour, int minutes) {
-        Calendar current = Calendar.getInstance();
-        Calendar special = Calendar.getInstance();
-        special.setTime(getTargetTime(day, hour, minutes));
-        return special.getTimeInMillis() >= current.getTimeInMillis();
-    }
+//    /**
+//     * 传入的日期是否在指定时间内
+//     * @param day
+//     * @param hour
+//     * @param minutes
+//     * @return
+//     */
+//    public static boolean isDateInSpecial(int day, int hour, int minutes) {
+//        Calendar current = Calendar.getInstance();
+//        Calendar special = Calendar.getInstance();
+//        special.setTime(getTargetTime(day, hour, minutes));
+//        return special.getTimeInMillis() >= current.getTimeInMillis();
+//    }
 }

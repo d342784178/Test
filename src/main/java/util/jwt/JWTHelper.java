@@ -5,7 +5,6 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
@@ -109,7 +108,7 @@ public class JWTHelper {
             return null;
         }
         //现在时间
-        long nowTime = DateTime.now().getMillis();
+        long nowTime = System.currentTimeMillis();
 
         //token实体
         Claims claims = JWTHelper.parseJWT(token, JWTConstant.BASE64);
