@@ -11,9 +11,9 @@ import java.util.Arrays;
 public class TestSort {
 
     public static void main(String args[]) {
-        SortStrategy sortStrategy = new SelectSort();
-        int[]        array        = new int[]{14, 12, 56, 1, 3};
-        System.out.println("原始:" +  Arrays.toString(array));
+        SortStrategy sortStrategy = new BubbleSort();
+        int[]        array        = new int[]{14, 12, 56, 1, 3, 81, 19, 2};
+        System.out.println("原始:" + Arrays.toString(array));
         System.out.println("结果:" + Arrays.toString(sortStrategy.sort(array)));
     }
 }
