@@ -2,10 +2,9 @@ package jdk1_8;
 
 import com.google.common.collect.Lists;
 import rx.Observable;
-import rx.functions.Action1;
-import rx.functions.Func1;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * Desc:
@@ -19,9 +18,11 @@ public class FunctionDemo {
         ArrayList<String> t = Lists.newArrayList("1", "2", "3", "4");
 
         //jdk8 流
-        System.out.println(t.stream().map(Integer::valueOf).reduce((integer, integer2) ->
-                integer + integer2).get());
-        t.stream().forEach(FunctionDemo::syso);
+        Optional<Integer> reduce = t.stream().map(Integer::valueOf).reduce((integer, integer2) ->
+                integer + integer2);
+        reduce.ifPresent(System.out::println);
+
+        t.forEach(FunctionDemo::syso);
 
         //响应式编程
         //rxjava
