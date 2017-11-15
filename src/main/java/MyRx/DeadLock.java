@@ -1,6 +1,6 @@
 package MyRx;
 
-public class DealLock implements Runnable {
+public class DeadLock implements Runnable {
     private int flag = 1;  
     // 此对象必须是静态的，同步必须是被多个线程共享  
     static Object resource1 = new Object(), resource2 = new Object();  
@@ -37,8 +37,8 @@ public class DealLock implements Runnable {
     }  
   
     public static void main(String[] args) {  
-        DealLock lock1 = new DealLock();  
-        DealLock lock2 = new DealLock();  
+        DeadLock lock1 = new DeadLock();
+        DeadLock lock2 = new DeadLock();
         lock1.flag = 1;  
         lock2.flag = 0;  
         Thread ll1 = new Thread(lock1);  
