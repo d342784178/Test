@@ -4,6 +4,11 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.concurrent.RecursiveTask;
 
+/**
+ * Desc: 并行计算
+ * Author: DLJ
+ * Date: 2017/11/15
+ */
 public class CountTask extends RecursiveTask<Integer> {
     private static final long serialVersionUID = -3611254198265061729L;
 
