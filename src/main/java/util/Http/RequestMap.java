@@ -11,7 +11,7 @@ import java.util.Map;
  * Time: 09:58
  */
 public class RequestMap {
-    public IHttpCallBack callback;//回调
+    private IHttpCallBack callback;//回调
     private LinkedHashMap<String, String>         headers   = new LinkedHashMap<>();
     private LinkedHashMap<String, String>         queryStrs = new LinkedHashMap<>();
     private LinkedHashMap<String, String>         forms     = new LinkedHashMap<>();
