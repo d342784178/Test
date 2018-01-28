@@ -50,7 +50,7 @@ public class OKhttpHttpUtils3_2_0 extends IHttpUtils.AbstractHttpUtils {
             callBack) {
         if (params != null) {
             OkhttpParamBuilder okhttpParamBuilder = new OkhttpParamBuilder(params);
-            params.callback = callBack;
+            params.setCallback(callBack);
             client.newCall(new Request.Builder().headers(Headers.of(params.getHeaders()))
                     .url(params.getUrl() + getQueryStr(params.getQueryStrs()))
                     .post(okhttpParamBuilder.build())
@@ -63,7 +63,7 @@ public class OKhttpHttpUtils3_2_0 extends IHttpUtils.AbstractHttpUtils {
     public void put(RequestMap params, IHttpCallBack<String> callBack) {
         if (params != null) {
             OkhttpParamBuilder okhttpParamBuilder = new OkhttpParamBuilder(params);
-            params.callback = callBack;
+            params.setCallback(callBack);
             client.newCall(new Request.Builder().headers(Headers.of(params.getHeaders()))
                     .url(params.getUrl() + getQueryStr(params.getQueryStrs()))
                     .put(okhttpParamBuilder.build())

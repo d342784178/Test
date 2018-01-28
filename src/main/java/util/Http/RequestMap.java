@@ -117,6 +117,11 @@ public class RequestMap {
         return files;
     }
 
+    public RequestMap setCallback(IHttpCallBack callback) {
+        this.callback = callback;
+        return this;
+    }
+
     public static class UploadFileInfo {
         public File   file;
         public String mimetype;
