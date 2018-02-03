@@ -1,7 +1,7 @@
 package bytebuddy.redefine;
 
 public class Foo {
-    String m() {
+    public  String m() {
         return "foo";
     }
 }

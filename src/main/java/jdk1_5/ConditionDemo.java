@@ -11,27 +11,26 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConditionDemo {
     public static void main(String[] args) {
-        Good good = new Good();
-        new AA(false, good).start();
-//        new Thread(new AA(false, good)).start();
+        Factory factory = new Factory();
+        new Worker(false, factory).start();
+//        new Worker(false, factory).start();
 
-//        new Thread(new AA(true, good)).start();
-        new AA(true, good).start();
-        new AA(true, good).start();
-        new AA(true, good).start();
+        new Worker(true, factory).start();
+        new Worker(true, factory).start();
+        new Worker(true, factory).start();
 
     }
 
-    private static class AA implements Runnable {
+    private static class Worker implements Runnable {
         private static int a = 0;
 
         private boolean consume;
 
-        private Good good;
+        private Factory factory;
 
-        public AA(boolean consume, Good good) {
+        public Worker(boolean consume, Factory factory) {
             this.consume = consume;
-            this.good = good;
+            this.factory = factory;
         }
 
         public void start() {
@@ -42,20 +41,20 @@ public class ConditionDemo {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(new Random().nextInt(10) * 100 * 3);
+                    Thread.sleep(new Random().nextInt(10) * 100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 if (consume) {
-                    good.consume();
+                    factory.consume();
                 } else {
-                    good.produce();
+                    factory.produce();
                 }
             }
         }
     }
 
-    private static class Good {
+    private static class Factory {
         ReentrantLock lock = new ReentrantLock();
 
         Condition full = lock.newCondition();
@@ -74,6 +73,7 @@ public class ConditionDemo {
                     System.out.println(threadName + "等待中,库存已满," + count);
                     full.await();
                     System.out.println(threadName + "等待结束,库存已消耗," + count);
+                    Thread.sleep(100);
                 }
                 count += 1;
 
@@ -90,12 +90,14 @@ public class ConditionDemo {
             try {
                 String threadName = Thread.currentThread().getName();
                 lock.lock();
-                while (count - 1 < 0) {
-                    //非公平锁时使用if判断会有问题. 当empty.signal()时,准备唤醒线程,此时新的消费者线程加入直接获取到锁,消耗了商品,线程结束,之前的等待线程被唤醒,此时商品数量已经不对了
+                if (count - 1 < 0) {
+                    //非公平锁时使用if判断会有问题. 当empty.signal()时,准备唤醒线程1
+                    //此时新的消费者线程2加入直接获取到锁,消耗了商品锁释放,之前的线程1被唤醒,此时商品已经被🎺已经不对了
                     //改成while 循环判断可以排除非公平锁问题
                     System.out.println(threadName + "等待中,库存不足," + count);
                     empty.await();
                     System.out.println(threadName + "等待结束,库存已增加," + count);
+                    Thread.sleep(100);
                 }
                 count -= 1;
                 System.out.println(Thread.currentThread().getName() + "库存减少,剩余" + count);
