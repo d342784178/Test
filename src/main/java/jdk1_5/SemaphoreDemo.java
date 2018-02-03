@@ -4,6 +4,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Desc:
+ * 原理: 共享锁
+ * 1. 初始化时设定state为信号量个数
+ * 2. acquire()和release()分别增减state值
+ * 3. acquire()如果state<=0 则自旋阻塞
+ * Author: ljdong2
+ * Date: 2018/2/3
+ */
 public class SemaphoreDemo extends Thread {
     //Semaphore 类似一个信号池
     //用途:多个线程 争抢一个有限资源 例子:抢坑位

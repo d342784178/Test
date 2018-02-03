@@ -4,6 +4,17 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Desc:
+ * 原理: 共享锁
+ * 1.实例化时设定state个数
+ * 2.countdown()减少state个数
+ * 3.await() 如果state!=0 则自旋阻塞
+ * 4.只能使用一次 因为state只减不增
+ *
+ * Author: ljdong2
+ * Date: 2018/2/3
+ */
 public class CountDownLatchDemo {
     //CountDownLatch 线程安全的计数器
     //用途:类似notifyAll 用与阻塞/唤醒所有线程

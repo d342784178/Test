@@ -9,6 +9,9 @@ import java.util.concurrent.Executors;
 
 /**
  * Desc: CyclicBarrier
+ * 原理: 独占锁 condition
+ * 1. await()加入等待队列阻塞
+ * 2. 当await()数量超出设定时 全部唤醒并加入等待队列
  * Author: DLJ
  * Date: 2017/2/7
  */
