@@ -215,9 +215,9 @@
 
 
         <!--<dependency>-->
-            <!--<groupId>com.qccr.framework</groupId>-->
-            <!--<artifactId>insight</artifactId>-->
-            <!--<version>1.6.3</version>-->
+        <!--<groupId>com.qccr.framework</groupId>-->
+        <!--<artifactId>insight</artifactId>-->
+        <!--<version>1.6.3</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>com.sun.jna</groupId>
@@ -238,6 +238,11 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
         </dependency>
     </dependencies>
 
