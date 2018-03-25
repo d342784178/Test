@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * //TODO 从中间开始找
  * Desc: 找到的最长回型子串 如:abcba aba abcddcba
  * Author: DLJ
  * Date: 2017-02-14

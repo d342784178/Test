@@ -40,6 +40,6 @@ public class JumpGame {
 
 
     public static void main(String args[]) {
-        System.out.println(new JumpGame().canJump(new int[]{0}));
+        System.out.println(new JumpGame().canJump(new int[]{3,2,1,0,4}));
     }
 }

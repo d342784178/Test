@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Desc:
+ * Desc: 求所有sum为给定数字的数字组合(可重复)
  * Author: DLJ
  * Date: 2017-02-16
  * Time: 13:35

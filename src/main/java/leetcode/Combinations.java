@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Desc:
+ * 回溯法
+ * Desc: 全排列问题
  * Author: DLJ
  * Date: 2017-02-16
  * Time: 15:21
