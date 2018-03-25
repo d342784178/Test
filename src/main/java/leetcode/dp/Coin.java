@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Desc: 有面值为1元、3元和5元的硬币若干枚，如何用最少的硬币凑够11元？
+ * Desc: 有面值为1元、2元和3元的硬币若干枚，如何用最少的硬币凑够11元？
  * Author: DLJ
  * Date: 2017-02-13
  * Time: 15:42

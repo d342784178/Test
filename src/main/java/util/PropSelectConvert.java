@@ -12,6 +12,7 @@ import net.bytebuddy.implementation.bind.annotation.Super;
 import net.bytebuddy.implementation.bind.annotation.SuperCall;
 import net.bytebuddy.matcher.ElementMatchers;
 import net.sf.cglib.core.Converter;
+import util.Http.annnotation.GET;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -31,11 +32,7 @@ import java.util.concurrent.Callable;
 public class PropSelectConvert<T> implements Converter {
     private static String FIELD_SELECTED = "FIELD_SELECTED";
 
-    @Getter
-    @Setter
     private List<String> list = Lists.newArrayList();
-    @Getter
-    @Setter
     private Class<T> dest;
 
     private PropSelectConvert() {
@@ -130,4 +127,22 @@ public class PropSelectConvert<T> implements Converter {
         }
     }
 
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public PropSelectConvert setList(List<String> list) {
+        this.list = list;
+        return this;
+    }
+
+    public Class<T> getDest() {
+        return dest;
+    }
+
+    public PropSelectConvert setDest(Class<T> dest) {
+        this.dest = dest;
+        return this;
+    }
 }
