@@ -15,18 +15,24 @@ public class StackByQueue implements StackI<Integer> {
 
     @Override
     public Integer pop() {
-        if (in.size() >= 1) {
+        if (out.size() >= 1) {
             Integer t = null;
-            while ((t = in.peek()) != null && in.size() > 1) {
+            while (out.peek() != null && out.size() > 1) {
+                t = out.pop();
+                in.push(t);
+            }
+            return out.pop();
+        } else if (in.size() >= 1) {
+            Integer t = null;
+            while (in.peek() != null && in.size() > 1) {
                 t = in.pop();
                 out.push(t);
             }
-            return in.pop();
-        } else if (out.size() >= 1) {
-            Queue<Integer> temp=out;
-            out=in;
-            in=temp;
-            return pop();
+            Integer        pop  = in.pop();
+            Queue<Integer> temp = out;
+            out = in;
+            in = temp;
+            return pop;
         } else {
             return null;
         }
@@ -63,6 +69,8 @@ public class StackByQueue implements StackI<Integer> {
         stack.push(3);
         Assert.assertTrue(stack.pop() == 3);
         Assert.assertTrue(stack.pop() == 2);
+        stack.push(4);
+        Assert.assertTrue(stack.pop() == 4);
         Assert.assertTrue(stack.pop() == 1);
         Assert.assertTrue(stack.isEmpty() == true);
     }
