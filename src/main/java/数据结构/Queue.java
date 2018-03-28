@@ -8,19 +8,23 @@ import org.junit.Assert;
  * Date: 2018-03-28
  * Time: 20:01
  */
-public class Queue<T> {
+public class Queue<T> implements StackI<T> {
     /**
      * 栈顶指针
      */
     private Node<T> firstNode;
     private Node<T> lastNode;
+    private int     size;
 
+    @Override
     public T pop() {
         Node<T> node = firstNode;
         firstNode = firstNode.next;
+        size -= 1;
         return node.t;
     }
 
+    @Override
     public void push(T t) {
         if (firstNode == null) {
             firstNode = new Node<>(t);
@@ -29,10 +33,22 @@ public class Queue<T> {
             lastNode.next = new Node<>(t);
             lastNode = lastNode.next;
         }
+        size += 1;
     }
 
+    @Override
     public boolean isEmpty() {
         return firstNode == null;
+    }
+
+    @Override
+    public T peek() {
+        return firstNode.t;
+    }
+
+    @Override
+    public int size() {
+        return size;
     }
 
     public static void main(String args[]) {

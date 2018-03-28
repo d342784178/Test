@@ -8,30 +8,47 @@ import org.junit.Assert;
  * Date: 2018-03-28
  * Time: 19:44
  */
-public class Stack<T> {
+public class Stack<T> implements StackI<T> {
     /**
      * 栈顶指针
      */
-    private Node<T> lastNode;
+    private Node<T> topNode;
 
+    private int size;
+
+    @Override
     public T pop() {
-        Node<T> node = lastNode;
-        lastNode = lastNode.next;
+        Node<T> node = topNode;
+        topNode = topNode.next;
+        size -= 1;
         return node.t;
     }
 
+    @Override
     public void push(T t) {
-        if (lastNode == null) {
-            lastNode = new Node<>(t);
+        if (topNode == null) {
+            topNode = new Node<>(t);
         } else {
             Node<T> tNode = new Node<>(t);
-            tNode.next = lastNode;
-            lastNode = tNode;
+            tNode.next = topNode;
+            topNode = tNode;
         }
+        size += 1;
     }
 
+    @Override
     public boolean isEmpty() {
-        return lastNode == null;
+        return topNode == null;
+    }
+
+    @Override
+    public T peek() {
+        return topNode != null ? topNode.t : null;
+    }
+
+    @Override
+    public int size() {
+        return size;
     }
 
 
