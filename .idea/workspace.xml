@@ -3,8 +3,202 @@
   <component name="ChangeListManager">
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEvent.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEventFactory.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEventFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEventHandler.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEventHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEventMain.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEventMain.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEventProducer.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEventProducer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Disruptor/LongEventProducerWithTranslator.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/Disruptor/LongEventProducerWithTranslator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/DeadLock.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/DeadLock.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyAction.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyAction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyCallBack.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyCallBack.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyCallBack2.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyCallBack2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyFunction.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyFunction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyObservable.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyObservable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyObservable2.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyObservable2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyObservable3.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyObservable3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyObservable4.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyObservable4.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyObserver.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MyOnSubscribe.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MyOnSubscribe.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MySubscribe.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MySubscribe.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/MyRx/MySubscribetion.java" afterPath="$PROJECT_DIR$/src/main/java/积累/MyRx/MySubscribetion.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/aio/AioServer.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/aio/AioServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/alibaba/Test1.java" afterPath="$PROJECT_DIR$/src/main/java/面试题/alibaba/Test1.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/alibaba/Test2.java" afterPath="$PROJECT_DIR$/src/main/java/面试题/alibaba/Test2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/alibaba/Test3.java" afterPath="$PROJECT_DIR$/src/main/java/面试题/alibaba/Test3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/apache/cli/CliTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/apache/cli/CliTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/agent/AgentTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/agent/AgentTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/agent/ClassFileTransformerTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/agent/ClassFileTransformerTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/agent/TimeInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/agent/TimeInterceptor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/delegate/DelegateTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/delegate/DelegateTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/delegate/InterceptorDelegate.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/delegate/InterceptorDelegate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/delegate/ReplaceDelegate.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/delegate/ReplaceDelegate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/delegate/Source.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/delegate/Source.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/rebase/Foo.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/rebase/Foo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/rebase/RebaseTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/rebase/RebaseTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/redefine/Bar.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/redefine/Bar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/redefine/Foo.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/redefine/Foo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/redefine/Foo2.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/redefine/Foo2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bytebuddy/redefine/RedefineTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/redefine/RedefineTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/classloader/Test.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/classloader/Test.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/ACommand.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/ACommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/AbsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/AbsCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/AsyncInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/AsyncInvoker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/BCommand.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/BCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/CCommand.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/CCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/Client.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/ICommand.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/ICommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/IInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/IInvoker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/IReceiver.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/IReceiver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/SyncInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/SyncInvoker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/AState.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/AState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/AbsState.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/AbsState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/BState.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/BState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/CState.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/CState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/Client.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/IState.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/IState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/designpatterns/state/StateManager.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/state/StateManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dubbo/Invoker.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/dubbo/Invoker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dubbo/Test.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/dubbo/Test.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dubbo/TestService.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/dubbo/TestService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dubbo/TestServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/dubbo/TestServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/BIzParamFunction.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/BIzParamFunction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/BizParamProvider.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/BizParamProvider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/ComponentExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/ComponentExecutor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/Extension.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/Extension.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/ExtensionCoordinate.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/ExtensionCoordinate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/ExtensionExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/ExtensionExecutor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/ExtensionPointI.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/ExtensionPointI.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/extension/ExtensionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/积累/extension/ExtensionRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/future/AsyncTask.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/future/AsyncTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/guava/GuavaDemo.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/guava/GuavaDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/guava/test.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/guava/test.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/BlockingQueueDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/BlockingQueueDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/CompletionServiceDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/CompletionServiceDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/ConditionDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/CountDownLatchDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/CountDownLatchDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/CyclicBarrierDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/CyclicBarrierDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/ExecutorDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/ExecutorDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/FutureTaskDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/FutureTaskDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/ReentrantLockDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/ReentrantLockDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/ScheduledThreadDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/ScheduledThreadDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/SemaphoreDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/SemaphoreDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_6/CompilerDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/CompilerDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_6/ConsoleDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/ConsoleDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_6/HttpServerDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/HttpServerDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_6/StaxDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/StaxDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_6/test.xml" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/test.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_7/CountTask.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_7/CountTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jdk1_8/FunctionDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_8/FunctionDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jna/BB.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/jna/BB.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jna/JnaTest.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/jna/JnaTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/lang3/LangDemo.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/lang3/LangDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/AddTwoNumbers.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/AddTwoNumbers.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/Candy.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/Candy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/CombinationSum.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/CombinationSum.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/CombinationSumII.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/CombinationSumII.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/Combinations.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/Combinations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/JumpGame.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/JumpGame.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring2.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/LongestSubstringWithoutRepeatingCharacters.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/MultiplyStrings.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/MultiplyStrings.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/PermutationSequence.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/PermutationsII.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/Pow.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/Pow.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/RemoveNthNodeFromEndofList.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/RemoveNthNodeFromEndofList.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/ReverseInteger.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/RotateImage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/StringToInteger.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/StringToInteger.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/Subsequence2.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/Subsequence2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/Subsets.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/Subsets.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/ThreeSum.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/ThreeSum.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/TwoSum.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/TwoSum.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/ZigZagConversion.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/ZigZagConversion.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/dp/Apple.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Apple.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/dp/Coin.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Coin.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/dp/JumpGameII.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/JumpGameII.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/leetcode/dp/Lis.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Lis.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/lintCode/字符串查找.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/lintCode/字符串查找.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/logic/兔子爬楼梯/Rabbit.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/logic/兔子爬楼梯/Rabbit.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/logic/兔子爬楼梯/Rabbit2.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/logic/兔子爬楼梯/Rabbit2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/logic/最高分是多少/Solution.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/logic/最高分是多少/Solution.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/netty/AADTO.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/netty/AADTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/netty/EchoClient.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/netty/EchoClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/netty/EchoClientHandler.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/netty/EchoClientHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/netty/EchoServer.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/netty/EchoServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/netty/EchoServerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/netty/EchoServerHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/Client.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/NioClient.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/NioDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioDemo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/NioServer.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/Server.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Server.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nio/Sync.java" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Sync.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/redis/RedisLock.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/redis/RedisLock.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/redis/RedisTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/redis/RedisTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sort/BubbleSort.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/sort/BubbleSort.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sort/QuickSort.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/sort/QuickSort.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sort/SelectSort.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/sort/SelectSort.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sort/SortStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/sort/SortStrategy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sort/TestSort.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/sort/TestSort.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Base64Utils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Base64Utils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/BeanCopier.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/BeanCopier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/BeanUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/BeanUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/BigDecimalUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/BigDecimalUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/CSVUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/CSVUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/CaptchaPicUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/CaptchaPicUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/ClickCounter.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/ClickCounter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/CookieTool.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/CookieTool.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/DateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/DateUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/EntryUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/EntryUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/ExceptionUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/ExceptionUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/GPSUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/GPSUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/GenericsUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/GenericsUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/GsonTools.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/GsonTools.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/IHttpCallBack.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/IHttpCallBack.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/IHttpUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/IHttpUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/IParamBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/IParamBuilder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/IRxConvertHttpUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/IRxConvertHttpUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/IRxHttpUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/IRxHttpUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/NetHelper.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/NetHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/Pair.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/Pair.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/RequestMap.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/RequestMap.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/File.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/File.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/GET.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/GET.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/Header.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/Header.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/POST.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/POST.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/Param.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/Param.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/annnotation/QueryStr.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/annnotation/QueryStr.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/CookiesManager.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/CookiesManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/LogInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/LogInterceptor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/OKhttpHttpUtils3_2_0.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/OKhttpHttpUtils3_2_0.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/OkhttpParamBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/OkhttpParamBuilder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/RxConvertOKhttpUtil3_2_0.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/RxConvertOKhttpUtil3_2_0.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/Http/okhttp/RxOkhttpUtils3_2_0.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/Http/okhttp/RxOkhttpUtils3_2_0.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/HttpUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/HttpUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/IPUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/IPUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/JAXBUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/JAXBUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/MailUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/MailUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/PingYinUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/PingYinUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/PropSelectConvert.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/PropSelectConvert.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/RSAUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/RSAUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/RandomUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/RandomUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/SignUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/SignUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/XmlToMapUtils.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/XmlToMapUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/encryp/AESUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/encryp/AESUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/encryp/DESUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/encryp/DESUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/encryp/MD5Util.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/encryp/MD5Util.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/jwt/JWTConstant.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/jwt/JWTConstant.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/jwt/JWTHelper.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/jwt/JWTHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/jwt/JwtClaims.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/jwt/JwtClaims.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/resume/ResumeUtil.java" afterPath="$PROJECT_DIR$/src/main/java/积累/util/resume/ResumeUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/Node.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/Node.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/Queue.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/Queue.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/QueueByStack.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/QueueByStack.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/Stack.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/Stack.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/StackByQueue.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/StackByQueue.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/数据结构/StackI.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/数据结构/StackI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java" afterPath="$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,11 +238,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConditionDemo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java">
+      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/面试题/alibaba/Test1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
+            <state relative-caret-position="195">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuavaDemo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/guava/GuavaDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -107,8 +311,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ddd/repo/Repo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ddd/biz/factory/TaskFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/TaskEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/KefuEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/factory/KefuFactory.java" />
@@ -158,6 +360,8 @@
         <option value="$PROJECT_DIR$/src/main/java/数据结构/QueueByStack.java" />
         <option value="$PROJECT_DIR$/src/main/java/数据结构/StackByQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/面试题/alibaba/Test1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/工具使用/guava/GuavaDemo.java" />
       </list>
     </option>
   </component>
@@ -201,7 +405,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -259,14 +463,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="数据结构" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -728,7 +924,8 @@
       <workItem from="1521792580813" duration="2219000" />
       <workItem from="1521966509125" duration="12609000" />
       <workItem from="1522237374028" duration="3846000" />
-      <workItem from="1524021092898" duration="163000" />
+      <workItem from="1524021092898" duration="1706000" />
+      <workItem from="1525832419703" duration="515000" />
     </task>
     <task id="LOCAL-00001" summary="添加注释">
       <created>1480770489139</created>
@@ -1017,7 +1214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522242827821</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="~">
+      <created>1524021261513</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1524021261513</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1053,7 +1257,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347937000" />
+    <option name="totallyTimeSpent" value="349995000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1065,8 +1269,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
@@ -1080,11 +1283,12 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.28513733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.28513733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32647464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3978052" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1107,7 +1311,6 @@
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32647464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
@@ -1148,53 +1351,53 @@
     <MESSAGE value="增加BeanCopier" />
     <MESSAGE value="增加同步/异步 阻塞/非阻塞代码" />
     <MESSAGE value="lis问题" />
-    <MESSAGE value="~" />
     <MESSAGE value="+栈实现" />
     <MESSAGE value="+两个队列实现栈&#10;两个栈实现队列" />
     <MESSAGE value="+队列实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="+队列实现" />
+    <MESSAGE value="~" />
+    <option name="LAST_COMMIT_MESSAGE" value="~" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/redis/RedisTest.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/工具使用/redis/RedisTest.java</url>
           <line>22</line>
           <properties />
           <option name="timeStamp" value="281" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/bytebuddy/redefine/Foo2.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/工具使用/bytebuddy/redefine/Foo2.java</url>
           <line>8</line>
           <properties />
           <option name="timeStamp" value="284" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Candy.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/Candy.java</url>
           <line>27</line>
           <properties />
           <option name="timeStamp" value="295" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/JumpGame.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/JumpGame.java</url>
           <line>24</line>
           <properties />
           <option name="timeStamp" value="296" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java</url>
           <line>31</line>
           <properties />
           <option name="timeStamp" value="297" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/数据结构/Queue.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/数据结构/Queue.java</url>
           <line>61</line>
           <properties />
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/数据结构/QueueByStack.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/数据结构/QueueByStack.java</url>
           <line>62</line>
           <properties />
           <option name="timeStamp" value="314" />
@@ -1220,43 +1423,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ScheduledThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="874" column="39" lean-forward="true" selection-start-line="874" selection-start-column="39" selection-end-line="874" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6494">
-          <caret line="431" column="0" lean-forward="true" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="139" column="35" lean-forward="false" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/test/CustomerConvertorExt.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="486" column="63" lean-forward="true" selection-start-line="486" selection-start-column="63" selection-end-line="486" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/lang/SuppressWarnings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -1264,14 +1430,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/Extension.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/Extension.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/ComponentExecutor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/ComponentExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
@@ -1279,14 +1445,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/extension/test/CustomerConvertorExtPt.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/BIzParamFunction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/BIzParamFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/BizParamProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/BizParamProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
@@ -1294,28 +1460,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/extension/BizParamProviderInvoker.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/ExtensionPointI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/ExtensionPointI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/ExtensionCoordinate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/ExtensionCoordinate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/GenericsUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/util/GenericsUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nio/Sync.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Sync.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
@@ -1343,80 +1509,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="228" column="43" lean-forward="true" selection-start-line="228" selection-start-column="43" selection-end-line="228" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/PropSelectConvert.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/util/PropSelectConvert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1675">
           <caret line="124" column="32" lean-forward="true" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/BeanCopier.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/util/BeanCopier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/ExtensionRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/ExtensionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/extension/ExtensionExecutor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/extension/ExtensionExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="63" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/alibaba/Test2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/面试题/alibaba/Test2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-121">
           <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/alibaba/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/dp/Lis.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Lis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/dp/Coin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Coin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-252">
           <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/dp/Apple.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/Apple.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
           <caret line="3" column="102" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="102" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/Combinations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/Combinations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/Candy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/Candy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-55">
           <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
@@ -1427,56 +1587,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/AddTwoNumbers.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/AddTwoNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/CombinationSumII.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/CombinationSumII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/CombinationSum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/CombinationSum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/PermutationSequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1017">
           <caret line="71" column="69" lean-forward="false" selection-start-line="71" selection-start-column="69" selection-end-line="71" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/MultiplyStrings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/LongestSubstringWithoutRepeatingCharacters.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
@@ -1484,7 +1637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/JumpGame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/JumpGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
@@ -1495,49 +1648,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/dp/JumpGameII.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/dp/JumpGameII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/alibaba/Test3.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/面试题/alibaba/Test3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/StackI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/StackI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/Queue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
@@ -1548,14 +1688,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/Stack.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="64" column="51" lean-forward="true" selection-start-line="56" selection-start-column="7" selection-end-line="64" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/QueueByStack.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/QueueByStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
@@ -1563,7 +1703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/数据结构/StackByQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/数据结构/StackByQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="52" column="28" lean-forward="false" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
@@ -1571,10 +1711,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/jdk1_5/ConditionDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
+        <state relative-caret-position="198">
+          <caret line="92" column="39" lean-forward="true" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/积累/util/BigDecimalUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/Subsets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/MultiplyStrings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/PermutationsII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/future/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/apache/cli/CliTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/classloader/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/Pow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/面试题/alibaba/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/guava/GuavaDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
           <folding />
         </state>
       </provider>
