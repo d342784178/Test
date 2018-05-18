@@ -1,7 +1,6 @@
 package 积累.util.Http;
 
 
-import util.Http.annnotation.*;
 import 积累.util.Http.annnotation.*;
 import 积累.util.Http.okhttp.RxConvertOKhttpUtil3_2_0;
 

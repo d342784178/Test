@@ -1,21 +1,23 @@
 package jdk特性.基本使用.nio;
 
-import org.junit.Test;
-
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Desc: 同步/异步 阻塞/非阻塞
  * Author: ljdong2
  * Date: 2018-03-23
  * Time: 16:10
- * 同步/异步:区别在于是否会通过事件机制通知操作完成(简单来说就是是否使用回调的方式)
- * 阻塞/非阻塞:区别在于是否会等待操作完成(简单来说就是是否会立刻返回,拿到的是future还是真实结果)
+ * 同步/异步:关注点在于当前线程是否等待 某操作结束 再继续执行
+ * 阻塞/非阻塞:关注点在于 当数据尚未准备就绪时 是否立刻返回 然后以多次尝试获取的方式获取数据
  */
 public class Sync {
 
-    @Test
+    /**
+     * 同步:当前线程等待操作完成后继续执行
+     */
     public void sync() {
         System.out.println("同步执行开始");
         syncCall();
@@ -23,163 +25,169 @@ public class Sync {
     }
 
     public void syncCall() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("syncCall");
     }
 
-    @Test
+    /**
+     * 异步: 当前线程不等待操作完成
+     */
     public void async() {
         System.out.println("异步执行开始");
-        asyncCall(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("同步执行结束");
-            }
-        });
-
-    }
-
-    public void asyncCall(Runnable runnable) {
         Executors.newSingleThreadExecutor().submit(new Runnable() {
             @Override
             public void run() {
-                System.out.println("asyncCall");
-                runnable.run();
+                syncCall();
             }
         });
+        System.out.println("异步执行结束");
+
     }
 
-    @Test
+    /**
+     * 阻塞: 等待数据就绪
+     */
     public void block() {
         System.out.println("阻塞执行开始");
-        blockCall();
+        System.out.println(blockCall());
         System.out.println("阻塞执行结束");
 
     }
 
-    public void blockCall() {
+    public String blockCall() {
         try {
+            //模拟等待数据就绪
             Thread.sleep(1000);
+            return "ok";
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            return "fail";
         }
     }
 
-    @Test
+    /**
+     * 非阻塞: 不等待数据就绪,获取不到数据则立刻返回
+     */
     public void unblock() {
         System.out.println("非阻塞执行开始");
-        unblockCall();
+        Future<String> future = unblockCall();
+        boolean flag   = true;
+        String  result = null;
+        //多次尝试获取
+        while (flag) {
+            try {
+                //模拟获取失败立刻返回
+                result = future.get(100, TimeUnit.MILLISECONDS);
+                flag = false;
+            } catch (Exception e) {
+                System.out.println("再次获取");
+            }
+        }
+        System.out.println(result);
         System.out.println("非阻塞执行结束");
 
     }
 
-    public void unblockCall() {
-        Executors.newSingleThreadExecutor().submit(new Runnable() {
+    public Future<String> unblockCall() {
+        return Executors.newSingleThreadExecutor().submit(new Callable<String>() {
             @Override
-            public void run() {
+            public String call() {
                 try {
                     Thread.sleep(1000);
+                    return "ok";
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    return "fail";
                 }
             }
         });
+
     }
 
-    @Test
+    /**
+     * 同步阻塞:
+     * 同步:当前线程等待执行结束
+     * 阻塞:等待数据准备就绪
+     */
     public void syncBlock() {
         System.out.println("同步阻塞执行开始");
-        syncBlockCall();
+        //同步:当前线程等待
+        System.out.println(blockCall());
         System.out.println("同步阻塞执行结束");
 
     }
 
-    public void syncBlockCall() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
+    /**
+     * 同步阻塞:
+     * 同步:当前线程等待执行结束
+     * 阻塞:不等待数据准备就绪 获取不到数据则立刻返回
+     */
     public void syncUnblock() {
         System.out.println("同步非阻塞执行开始");
-        syncUnblockCall();
+        System.out.println(unblockCall());
         System.out.println("同步非阻塞执行结束");
 
     }
 
-    public void syncUnblockCall() {
-        Executors.newSingleThreadExecutor().submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    @Test
+    /**
+     * 异步阻塞:
+     * 异步:当前线程不等待执行结束
+     * 阻塞:等待数据准备就绪
+     */
     public void asyncBlock() {
         System.out.println("异步阻塞执行开始");
-        asyncBlockCall(new Runnable() {
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                System.out.println("同步非阻塞执行结束");
+                System.out.println(blockCall());
+
             }
         });
-
-
+        System.out.println("异步阻塞执行结束");
     }
 
-    public void asyncBlockCall(Runnable runnable) {
-        Future<?> submit = Executors.newSingleThreadExecutor().submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                runnable.run();
-            }
-        });
-        try {
-            submit.get();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    @Test
+    /**
+     * 异步非阻塞
+     */
     public void asyncUnblock() {
         System.out.println("异步非阻塞执行开始");
-        asyncBlockCall(new Runnable() {
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                System.out.println("同步非阻塞执行结束");
+                Future<String> future = unblockCall();
+                boolean flag   = true;
+                String  result = null;
+                //多次尝试获取
+                while (flag) {
+                    try {
+                        //模拟获取失败立刻返回
+                        result = future.get(100, TimeUnit.MILLISECONDS);
+                        flag = false;
+                    } catch (Exception e) {
+                        System.out.println("再次获取");
+                    }
+                }
+                System.out.println(result);
             }
         });
-
-
+        System.out.println("异步非阻塞执行结束");
     }
 
-    public void asyncUnblockCall(Runnable runnable) {
-        Future<?> submit = Executors.newSingleThreadExecutor().submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                runnable.run();
-            }
-        });
 
+    public static void main(String args[]) {
+        Sync sync = new Sync();
+//        sync.sync();
+//        sync.async();
+//        sync.block();
+//        sync.unblock();
+//        sync.syncBlock();
+//        sync.syncUnblock();
+//        sync.asyncBlock();
+        sync.asyncUnblock();
     }
 
 }
