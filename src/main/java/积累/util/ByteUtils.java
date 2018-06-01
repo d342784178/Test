@@ -1,12 +1,14 @@
 package 积累.util;
 
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Booleans;
 import org.springframework.util.Assert;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author lishupeng
@@ -58,6 +60,7 @@ public class ByteUtils {
             byte[] bytes = new byte[size];
             for (int j = 0; j < size; j++) {
                 byte b = 0;
+                //利用补码正负相加的原理
                 for (int i = 0; i <= 7; i++) {
                     if (array.get(i + (j * 8))) {
                         b += (1 << (7 - i));
@@ -137,27 +140,29 @@ public class ByteUtils {
 
     //==============//==============//==============//==============//==============//==============//==============
     public static short getShort(byte[] bytes) {
-        return (short) ((bytes[1]) |
-                ((bytes[0] << 8)));
+        return (short) ((bytes[1] & 0xff) |
+                (((bytes[0] & 0xff) << 8)));
     }
 
     public static char getChar(byte[] bytes) {
-        return (char) ((bytes[1]) |
-                ((bytes[0] << 8)));
+        return (char) (((char) (bytes[0] << 8)) | ((char) bytes[1]));
     }
 
     public static int getInt(byte[] bytes) {
-        return (bytes[3]) |
-                ((bytes[2] << 8)) |
-                ((bytes[1] << 16)) |
-                ((bytes[0] << 24));
+
+
+        return getInt(bytes, 0);
+
     }
 
     public static int getInt(byte[] bytes, int offset) {
-        return bytes[offset + 3] |
-                (bytes[offset + 2] << 8) |
-                (bytes[offset + 1] << 16) |
-                (bytes[offset + 0] << 24);
+        //&0xff 确保只有低位参与位运算
+        //因为b[i]在进行<<运算时会向上转型成int型
+        //示例: b[i]=-1 二进制表示为11111111 转成int后变为 11111111111111}64个
+        return (bytes[3 + offset] & 0xff) |
+                ((bytes[2 + offset] & 0xff) << 8) |
+                ((bytes[1 + offset] & 0xff) << 16) |
+                ((bytes[0 + offset] & 0xff) << 24);
     }
 
     public static boolean[] getBoolean(byte[] bytes) {
@@ -165,12 +170,12 @@ public class ByteUtils {
         for (int i = 0; i < bytes.length; i++) {
             byte aByte = bytes[i];
             booleans[0 + i * 8] = (aByte & 0x80) >> 7 == 1;
-            booleans[1 + i * 8] = (aByte & 0x70) >> 6 == 1;
-            booleans[2 + i * 8] = (aByte & 0x30) >> 5 == 1;
+            booleans[1 + i * 8] = (aByte & 0x40) >> 6 == 1;
+            booleans[2 + i * 8] = (aByte & 0x20) >> 5 == 1;
             booleans[3 + i * 8] = (aByte & 0x10) >> 4 == 1;
             booleans[4 + i * 8] = (aByte & 0x08) >> 3 == 1;
-            booleans[5 + i * 8] = (aByte & 0x07) >> 2 == 1;
-            booleans[6 + i * 8] = (aByte & 0x03) >> 1 == 1;
+            booleans[5 + i * 8] = (aByte & 0x04) >> 2 == 1;
+            booleans[6 + i * 8] = (aByte & 0x02) >> 1 == 1;
             booleans[7 + i * 8] = (aByte & 0x01) >> 0 == 1;
         }
         return booleans;
@@ -178,14 +183,14 @@ public class ByteUtils {
     }
 
     public static long getLong(byte[] bytes) {
-        return (long) bytes[7] |
-                (long) bytes[6] << 8 |
-                (long) bytes[5] << 16 |
-                (long) bytes[4] << 24 |
-                (long) bytes[3] << 32 |
-                (long) bytes[2] << 40 |
-                (long) bytes[1] << 48 |
-                (long) bytes[0] << 56;
+        return (long) (((bytes[0] & 0xff) << 56) |
+                ((bytes[1] & 0xff) << 48) |
+                ((bytes[2] & 0xff) << 40) |
+                ((bytes[3] & 0xff) << 32) |
+                ((bytes[4] & 0xff) << 24) |
+                ((bytes[5] & 0xff) << 16) |
+                ((bytes[6] & 0xff) << 8) |
+                ((bytes[7] & 0xff)));
     }
 
     public static float getFloat(byte[] bytes) {
@@ -212,35 +217,54 @@ public class ByteUtils {
 
 
     public static void main(String args[]) {
-        byte[] bytes = getBytes((short) 128);
+        byte[] bytes = null;
+
+        short a = 128;
+        bytes = getBytes(a);
         System.out.println(Arrays.toString(bytes));
+        org.junit.Assert.assertEquals(a, getShort(bytes));
         System.out.println(getShort(bytes));
 
-        bytes = getBytes((long) 128);
+        long b = 128;
+        bytes = getBytes(b);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(getLong(bytes));
+        org.junit.Assert.assertEquals(a, getLong(bytes));
 
-        bytes = getBytes('a');
+        char c = 'a';
+        bytes = getBytes(c);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(getChar(bytes));
+        org.junit.Assert.assertTrue(Objects.equals(c, getChar(bytes)));
 
 
-        bytes = getBytes(128);
+        int d = 128;
+        bytes = getBytes(d);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(getInt(bytes));
+        org.junit.Assert.assertEquals(a, getInt(bytes));
 
-        bytes = getBytes(0.5f);
+
+        float e = 128f;
+        bytes = getBytes(e);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(getFloat(bytes));
+        org.junit.Assert.assertTrue(Math.abs(getFloat(bytes) - e) < 0.001f);
 
-        bytes = getBytes(1D);
+        double f = 128D;
+        bytes = getBytes(f);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(getDouble(bytes));
+        double aDouble = getDouble(bytes);
+        System.out.println(aDouble);
+        //org.junit.Assert.assertTrue(Math.abs(aDouble - e) < 0.001f);
 
 
-        bytes = getBytes(Lists.newArrayList(false, true, true, true, true, true, true, true));
+        ArrayList<Boolean> g = Lists.newArrayList(true, false, false, false, false, false, false, true);
+        bytes = getBytes(g);
         System.out.println(Arrays.toString(bytes));
-        System.out.println(Arrays.toString(getBoolean(bytes)));
+        org.junit.Assert.assertTrue(Objects.equals(g, Booleans.asList(getBoolean(bytes))));
+
+
+        byte[] h = {-1};
+        boolean[] aBoolean = getBoolean(h);
+        System.out.println(Arrays.toString(aBoolean));
+        org.junit.Assert.assertTrue(Arrays.equals(h, getBytes(Booleans.asList(aBoolean))));
 
 
     }
