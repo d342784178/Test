@@ -16,6 +16,7 @@ import java.util.Objects;
  **/
 public class ByteUtils {
     public static byte[] getBytes(short a) {
+        //无需&0xff 因为转为byte时会去掉高位
         return new byte[]{
                 (byte) (a >> 8),
                 (byte) a
@@ -60,7 +61,6 @@ public class ByteUtils {
             byte[] bytes = new byte[size];
             for (int j = 0; j < size; j++) {
                 byte b = 0;
-                //利用补码正负相加的原理
                 for (int i = 0; i <= 7; i++) {
                     if (array.get(i + (j * 8))) {
                         b += (1 << (7 - i));
@@ -109,7 +109,7 @@ public class ByteUtils {
         return cur;
     }
 
-    public static byte[][] split(byte[] source, int c) {
+    public static byte[][] split(byte[] source, byte c) {
         if (source == null || source.length == 0) {
             return new byte[][]{};
         }
@@ -145,12 +145,11 @@ public class ByteUtils {
     }
 
     public static char getChar(byte[] bytes) {
-        return (char) (((char) (bytes[0] << 8)) | ((char) bytes[1]));
+        return (char) (((char) (bytes[0] << 8)) |
+                ((char) bytes[1]));
     }
 
     public static int getInt(byte[] bytes) {
-
-
         return getInt(bytes, 0);
 
     }
@@ -165,10 +164,33 @@ public class ByteUtils {
                 ((bytes[0 + offset] & 0xff) << 24);
     }
 
+    public static long getLong(byte[] bytes) {
+        return ((long) (bytes[0] & 0xff) << 56 |
+                (long) (bytes[1] & 0xff) << 48 |
+                (long) (bytes[2] & 0xff) << 40 |
+                (long) (bytes[3] & 0xff) << 32 |
+                (long) (bytes[4] & 0xff) << 24 |
+                (long) (bytes[5] & 0xff) << 16 |
+                (long) (bytes[6] & 0xff) << 8 |
+                (long) (bytes[7] & 0xff));
+    }
+
+    public static float getFloat(byte[] bytes) {
+        return Float.intBitsToFloat(getInt(bytes));
+    }
+
+    public static double getDouble(byte[] bytes) {
+        long l = getLong(bytes);
+        return Double.longBitsToDouble(l);
+    }
+
     public static boolean[] getBoolean(byte[] bytes) {
         boolean[] booleans = new boolean[bytes.length * 8];
         for (int i = 0; i < bytes.length; i++) {
             byte aByte = bytes[i];
+            //  1111 1111
+            //& 1000 0000
+            //  1000 0000 >> 7 ==1?
             booleans[0 + i * 8] = (aByte & 0x80) >> 7 == 1;
             booleans[1 + i * 8] = (aByte & 0x40) >> 6 == 1;
             booleans[2 + i * 8] = (aByte & 0x20) >> 5 == 1;
@@ -182,25 +204,7 @@ public class ByteUtils {
 
     }
 
-    public static long getLong(byte[] bytes) {
-        return (long) (((bytes[0] & 0xff) << 56) |
-                ((bytes[1] & 0xff) << 48) |
-                ((bytes[2] & 0xff) << 40) |
-                ((bytes[3] & 0xff) << 32) |
-                ((bytes[4] & 0xff) << 24) |
-                ((bytes[5] & 0xff) << 16) |
-                ((bytes[6] & 0xff) << 8) |
-                ((bytes[7] & 0xff)));
-    }
 
-    public static float getFloat(byte[] bytes) {
-        return Float.intBitsToFloat(getInt(bytes));
-    }
-
-    public static double getDouble(byte[] bytes) {
-        long l = getLong(bytes);
-        return Double.longBitsToDouble(l);
-    }
 
     //==============//==============//==============//==============//==============//==============//==============
     public static String getString(byte[] bytes, String charsetName) {
