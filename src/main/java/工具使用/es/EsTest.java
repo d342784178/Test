@@ -30,11 +30,11 @@ import org.elasticsearch.script.Script;
 import org.elasticsearch.script.ScriptType;
 import org.elasticsearch.script.mustache.SearchTemplateRequestBuilder;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.histogram.DateHistogramInterval;
 import org.elasticsearch.search.aggregations.bucket.histogram.Histogram;
 import org.elasticsearch.search.aggregations.metrics.stats.Stats;
-import org.elasticsearch.search.aggregations.metrics.stats.StatsAggregationBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.SortOrder;
 import org.elasticsearch.tasks.TaskId;
@@ -424,14 +424,15 @@ public class EsTest {
                 .execute().actionGet();
 
         //准备工作
-        StatsAggregationBuilder agg3 = AggregationBuilders.stats("agg1").field("egg");
+        AggregationBuilder agg = AggregationBuilders.stats("agg1").field("egg");
+        sr = client.prepareSearch().addAggregation(agg).get();
         //获取指标
-        Stats  agg   = sr.getAggregations().get("agg");
-        double min   = agg.getMin();
-        double max   = agg.getMax();
-        double avg   = agg.getAvg();
-        double sum   = agg.getSum();
-        long   count = agg.getCount();
+        Stats  stats   = sr.getAggregations().get("agg");
+        double min   = stats.getMin();
+        double max   = stats.getMax();
+        double avg   = stats.getAvg();
+        double sum   = stats.getSum();
+        long   count = stats.getCount();
     }
 
     /**
@@ -477,7 +478,6 @@ public class EsTest {
                 .get()
                 .getResponse();
     }
-
 
 
 }
