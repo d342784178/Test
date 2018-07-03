@@ -59,7 +59,7 @@ public class QueryDSL {
         existsQuery("name");
         //前缀查询
         prefixQuery("name", "prefix");
-        //类似正则查询
+        //通配符查询
         wildcardQuery("user", "k?mch*");
         //正则查询
         regexpQuery("name.first", "s.*y");

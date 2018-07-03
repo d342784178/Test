@@ -394,6 +394,7 @@ public class EsTest {
 
     /**
      * 聚合
+     * @link https://blog.csdn.net/chengyuqiang/article/details/79351779
      */
     @Test
     public void aggregations() throws Exception {
