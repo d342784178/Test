@@ -1,6 +1,7 @@
 package 工具使用.es;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.base.Function;
 import org.apache.lucene.index.Terms;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.DocWriteRequest;
@@ -29,7 +30,6 @@ import org.elasticsearch.index.reindex.*;
 import org.elasticsearch.script.Script;
 import org.elasticsearch.script.ScriptType;
 import org.elasticsearch.script.mustache.SearchTemplateRequestBuilder;
-import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.histogram.DateHistogramInterval;
@@ -44,10 +44,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.InetAddress;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 import static org.elasticsearch.script.ScriptType.INLINE;
@@ -68,7 +66,7 @@ public class EsTest {
         // 设置集群名称
         //配置详情 https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.3/transport-client.html
         Settings settings = Settings.builder().put("cluster.name", "myapplication-elk")
-                .put("client.transport.ignore_cluster_name", true).build();
+                                    .put("client.transport.ignore_cluster_name", true).build();
         // 创建client   tcp端口 !不是http端口
         client = new PreBuiltTransportClient(settings)
                 .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"), 9300));
@@ -78,13 +76,13 @@ public class EsTest {
     public void index() throws Exception {
         //jsonbuilder方式
         IndexResponse response = client.prepareIndex("twitter", "tweet", "1")
-                .setSource(jsonBuilder()
-                        .startObject()
-                        .field("user", "kimchy")
-                        .field("postDate", new Date())
-                        .field("message", "trying out Elasticsearch")
-                        .endObject())
-                .get();
+                                       .setSource(jsonBuilder()
+                                               .startObject()
+                                               .field("user", "kimchy")
+                                               .field("postDate", new Date())
+                                               .field("message", "trying out Elasticsearch")
+                                               .endObject())
+                                       .get();
         //json字符串方式
         String json = "{" +
                 "\"user\":\"kimchy\"," +
@@ -92,23 +90,23 @@ public class EsTest {
                 "\"message\":\"trying out Elasticsearch\"" +
                 "}";
         response = client.prepareIndex("twitter", "tweet")
-                .setSource(json, XContentType.JSON)
-                .get();
+                         .setSource(json, XContentType.JSON)
+                         .get();
         //map方式
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("user", "kimchy");
         map.put("postDate", new Date());
         map.put("message", "trying out Elasticsearch");
         response = client.prepareIndex("twitter", "tweet")
-                .setSource(map)
-                .get();
+                         .setSource(map)
+                         .get();
 
         // byte[]数组方式
         ObjectMapper mapper    = new ObjectMapper(); // create once, reuse
         byte[]       jsonBytes = mapper.writeValueAsBytes(json);
         response = client.prepareIndex("twitter", "tweet")
-                .setSource(jsonBytes)
-                .get();
+                         .setSource(jsonBytes)
+                         .get();
     }
 
     @Test
@@ -125,26 +123,26 @@ public class EsTest {
     public void deleteByQuery() throws Exception {
         //同步
         BulkByScrollResponse response = DeleteByQueryAction.INSTANCE.newRequestBuilder(client)
-                .filter(QueryBuilders.matchQuery("gender", "male"))
-                .source("persons")
-                .get();
+                                                                    .filter(QueryBuilders.matchQuery("gender", "male"))
+                                                                    .source("persons")
+                                                                    .get();
         long deleted = response.getDeleted();
 
         //异步callback
         DeleteByQueryAction.INSTANCE.newRequestBuilder(client)
-                .filter(QueryBuilders.matchQuery("gender", "male"))
-                .source("persons")
-                .execute(new ActionListener<BulkByScrollResponse>() {
-                    @Override
-                    public void onResponse(BulkByScrollResponse response) {
-                        long deleted = response.getDeleted();
-                    }
+                                    .filter(QueryBuilders.matchQuery("gender", "male"))
+                                    .source("persons")
+                                    .execute(new ActionListener<BulkByScrollResponse>() {
+                                        @Override
+                                        public void onResponse(BulkByScrollResponse response) {
+                                            long deleted = response.getDeleted();
+                                        }
 
-                    @Override
-                    public void onFailure(Exception e) {
-                        // Handle the exception
-                    }
-                });
+                                        @Override
+                                        public void onFailure(Exception e) {
+                                            // Handle the exception
+                                        }
+                                    });
 
     }
 
@@ -162,16 +160,16 @@ public class EsTest {
         client.update(updateRequest).get();
         //全量更新 链式
         client.prepareUpdate("ttl", "doc", "1")
-                .setDoc(jsonBuilder()
-                        .startObject()
-                        .field("gender", "male")
-                        .endObject())
-                .get();
+              .setDoc(jsonBuilder()
+                      .startObject()
+                      .field("gender", "male")
+                      .endObject())
+              .get();
 
         //局部更新
         client.prepareUpdate("ttl", "doc", "1")
-                .setScript(new Script(INLINE, "ctx._source.gender = \"male\"", null, null))
-                .get();
+              .setScript(new Script(INLINE, "ctx._source.gender = \"male\"", null, null))
+              .get();
 
 
         //update or insert
@@ -195,17 +193,17 @@ public class EsTest {
         UpdateByQueryRequestBuilder updateAction = UpdateByQueryAction.INSTANCE.newRequestBuilder
                 (client);
         updateAction.filter(QueryBuilders.matchQuery("gender", "male"))
-                .size(1000)
-                .script(new Script(ScriptType.INLINE, "ctx._source.awesome = 'absolutely'", "painless", Collections
-                        .emptyMap()))
-                .abortOnVersionConflict(false)//防止因更新操作导致版本的冲突
-                .source()//对结果的操作
-                .addSort("cat", SortOrder.DESC);
+                    .size(1000)
+                    .script(new Script(ScriptType.INLINE, "ctx._source.awesome = 'absolutely'", "painless", Collections
+                            .emptyMap()))
+                    .abortOnVersionConflict(false)//防止因更新操作导致版本的冲突
+                    .source()//对结果的操作
+                    .addSort("cat", SortOrder.DESC);
         BulkByScrollResponse bulkByScrollResponse = updateAction.get();
 
         //查看所有update-by-query操作
         ListTasksResponse tasksList = client.admin().cluster().prepareListTasks()
-                .setActions(UpdateByQueryAction.NAME).setDetailed(true).get();
+                                            .setActions(UpdateByQueryAction.NAME).setDetailed(true).get();
         for (TaskInfo info : tasksList.getTasks()) {
             TaskId                  taskId = info.getTaskId();
             BulkByScrollTask.Status status = (BulkByScrollTask.Status) info.getStatus();
@@ -222,9 +220,9 @@ public class EsTest {
 
         //限流
         RethrottleAction.INSTANCE.newRequestBuilder(client)
-                .setTaskId(new TaskId("", 1L))
-                .setRequestsPerSecond(2.0f)
-                .get();
+                                 .setTaskId(new TaskId("", 1L))
+                                 .setRequestsPerSecond(2.0f)
+                                 .get();
     }
 
     /**
@@ -233,10 +231,10 @@ public class EsTest {
     @Test
     public void multiGet() throws Exception {
         MultiGetResponse multiGetItemResponses = client.prepareMultiGet()
-                .add("twitter", "tweet", "1")
-                .add("twitter", "tweet", "2", "3", "4")
-                .add("another", "type", "foo")
-                .get();
+                                                       .add("twitter", "tweet", "1")
+                                                       .add("twitter", "tweet", "2", "3", "4")
+                                                       .add("another", "type", "foo")
+                                                       .get();
 
         for (MultiGetItemResponse itemResponse : multiGetItemResponses) {
             GetResponse response = itemResponse.getResponse();
@@ -256,13 +254,13 @@ public class EsTest {
         BulkRequestBuilder bulkRequest = client.prepareBulk();
         //加入index操作
         bulkRequest.add(client.prepareIndex("twitter", "tweet", "1")
-                .setSource(jsonBuilder()
-                        .startObject()
-                        .field("user", "kimchy")
-                        .field("postDate", new Date())
-                        .field("message", "trying out Elasticsearch")
-                        .endObject()
-                )
+                              .setSource(jsonBuilder()
+                                      .startObject()
+                                      .field("user", "kimchy")
+                                      .field("postDate", new Date())
+                                      .field("message", "trying out Elasticsearch")
+                                      .endObject()
+                              )
         );
         //加入delete操作
         bulkRequest.add(client.prepareDelete("twitter", "tweet", "2").request());
@@ -301,13 +299,14 @@ public class EsTest {
                                           Throwable failure) {
                     }
                 })
-                .setBulkActions(10000)//每10000个操作 执行一次
-                .setBulkSize(new ByteSizeValue(5, ByteSizeUnit.MB))//每5m 执行一次
-                .setFlushInterval(TimeValue.timeValueSeconds(5))//每5s 执行一次
-                .setConcurrentRequests(1)//并发数量
-                .setBackoffPolicy(//设置backoff策略
-                        BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3))
-                .build();
+                                                   .setBulkActions(10000)//每10000个操作 执行一次
+                                                   .setBulkSize(new ByteSizeValue(5, ByteSizeUnit.MB))//每5m 执行一次
+                                                   .setFlushInterval(TimeValue.timeValueSeconds(5))//每5s 执行一次
+                                                   .setConcurrentRequests(1)//并发数量
+                                                   .setBackoffPolicy(//设置backoff策略
+                                                           BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis
+                                                                   (100), 3))
+                                                   .build();
 
         // 添加操作
         bulkProcessor.add(client.prepareDelete("twitter", "tweet", "1").request());
@@ -332,20 +331,20 @@ public class EsTest {
     @Test
     public void reIndex() throws Exception {
         BulkByScrollResponse response = ReindexAction.INSTANCE.newRequestBuilder(client)
-                .destination("target_index")
-                .filter(QueryBuilders.matchQuery("category", "xzy"))
-                .get();
+                                                              .destination("target_index")
+                                                              .filter(QueryBuilders.matchQuery("category", "xzy"))
+                                                              .get();
     }
 
     @Test
     public void search() throws Exception {
         SearchResponse response = client.prepareSearch("index1", "index2")
-                .setTypes("type1", "type2")
-                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.termQuery("multi", "test"))                 // Query
-                .setPostFilter(QueryBuilders.rangeQuery("age").from(12).to(18))     // Filter
-                .setFrom(0).setSize(60).setExplain(true)
-                .get();
+                                        .setTypes("type1", "type2")
+                                        .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+                                        .setQuery(QueryBuilders.termQuery("multi", "test"))                 // Query
+                                        .setPostFilter(QueryBuilders.rangeQuery("age").from(12).to(18))     // Filter
+                                        .setFrom(0).setSize(60).setExplain(true)
+                                        .get();
     }
 
     @Test
@@ -355,9 +354,9 @@ public class EsTest {
         SearchRequestBuilder srb2 = client
                 .prepareSearch().setQuery(QueryBuilders.matchQuery("name", "kimchy")).setSize(1);
         MultiSearchResponse sr = client.prepareMultiSearch()
-                .add(srb1)
-                .add(srb2)
-                .get();
+                                       .add(srb1)
+                                       .add(srb2)
+                                       .get();
 
         long nbHits = 0;
         for (MultiSearchResponse.Item item : sr.getResponses()) {
@@ -373,22 +372,29 @@ public class EsTest {
     public void scroll() throws Exception {
         QueryBuilder qb = QueryBuilders.termQuery("multi", "test");
 
-        SearchResponse scrollResp = client.prepareSearch("index1")
-                .addSort(FieldSortBuilder.DOC_FIELD_NAME, SortOrder.ASC)
-                .setScroll(new TimeValue(60000))//在指定时间内执行scroll操作
-                .setQuery(qb)
-                .setSize(100)//每次最大返回书
-                .get();
-        do {
-            for (SearchHit hit : scrollResp.getHits().getHits()) {
-                //处理返回结果
+        SearchResponse searchResponse = client.prepareSearch("index1")
+                                              .addSort(FieldSortBuilder.DOC_FIELD_NAME, SortOrder.ASC)
+                                              .setScroll(new TimeValue(60000))//在指定时间内执行scroll操作
+                                              .setQuery(qb)
+                                              .setSize(100)//每次最大返回书
+                                              .get();
+        String scrollerId = searchResponse.getScrollId();
+        Function<SearchResponse, List<String>> tranformFunc = new Function<SearchResponse, List<String>>() {
+            @Override
+            public List<String> apply(SearchResponse input) {
+                List caller = Arrays.stream(input.getHits().getHits())
+                                    .map(documentFields -> documentFields.getSourceAsMap().get("caller"))
+                                    .collect(Collectors.toList());
+                return caller.size() > 0 ? caller : null;
             }
-            scrollResp = client.prepareSearchScroll(scrollResp.getScrollId())
-                    .setScroll(new TimeValue(60000))//在指定时间内执行scroll操作
-                    .execute()
-                    .actionGet();
+        };
+        List<String>                          result   = tranformFunc.apply(searchResponse);
+        Scroller<List<String>>                scroller = new Scroller<>(scrollerId, result, 6000L, tranformFunc);
+        Scroller.ScrollerHelper<List<String>> helper   = scroller.helper();
+        do {
+            scroller.getResult().forEach(System.out::println);
         }
-        while (scrollResp.getHits().getHits().length != 0); // 当返回数量为0时停止
+        while ((scroller = helper.next(scroller, client)) != null);
     }
 
 
@@ -399,36 +405,39 @@ public class EsTest {
     @Test
     public void aggregations() throws Exception {
         SearchResponse sr = client.prepareSearch()
-                .setQuery(QueryBuilders.matchAllQuery())
-                .addAggregation(
-                        AggregationBuilders.terms("agg1").field("field")
-                )
-                .addAggregation(
-                        AggregationBuilders.dateHistogram("agg2")
-                                .field("birth")
-                                .dateHistogramInterval(DateHistogramInterval.YEAR)
-                )
-                .get();
+                                  .setQuery(QueryBuilders.matchAllQuery())
+                                  .addAggregation(
+                                          AggregationBuilders.terms("agg1").field("field")
+                                  )
+                                  .addAggregation(
+                                          AggregationBuilders.dateHistogram("agg2")
+                                                             .field("birth")
+                                                             .dateHistogramInterval(DateHistogramInterval.YEAR)
+                                  )
+                                  .get();
 
         Terms     agg1 = sr.getAggregations().get("agg1");
         Histogram agg2 = sr.getAggregations().get("agg2");
         //指标组合
         sr = client.prepareSearch()
-                .addAggregation(
-                        AggregationBuilders.terms("by_country").field("country")
-                                .subAggregation(AggregationBuilders.dateHistogram("by_year")
-                                        .field("dateOfBirth")
-                                        .dateHistogramInterval(DateHistogramInterval.YEAR)
-                                        .subAggregation(AggregationBuilders.avg("avg_children").field("children"))
-                                )
-                )
-                .execute().actionGet();
+                   .addAggregation(
+                           AggregationBuilders.terms("by_country").field("country")
+                                              .subAggregation(AggregationBuilders.dateHistogram("by_year")
+                                                                                 .field("dateOfBirth")
+                                                                                 .dateHistogramInterval
+                                                                                         (DateHistogramInterval.YEAR)
+                                                                                 .subAggregation(AggregationBuilders
+                                                                                         .avg("avg_children")
+                                                                                                                    .field("children"))
+                                              )
+                   )
+                   .execute().actionGet();
 
         //准备工作
         AggregationBuilder agg = AggregationBuilders.stats("agg1").field("egg");
         sr = client.prepareSearch().addAggregation(agg).get();
         //获取指标
-        Stats  stats   = sr.getAggregations().get("agg");
+        Stats  stats = sr.getAggregations().get("agg");
         double min   = stats.getMin();
         double max   = stats.getMax();
         double avg   = stats.getAvg();
@@ -443,16 +452,16 @@ public class EsTest {
     public void searchTemplate() throws Exception {
         //保存脚本到es集群中
         client.admin().cluster()
-                .preparePutStoredScript()
-                .setId("template_gender")
-                .setContent(new BytesArray(
-                        "{\n" +
-                                "    \"query\" : {\n" +
-                                "        \"match\" : {\n" +
-                                "            \"gender\" : \"{{param_gender}}\"\n" +
-                                "        }\n" +
-                                "    }\n" +
-                                "}"), XContentType.valueOf("mustache"));
+              .preparePutStoredScript()
+              .setId("template_gender")
+              .setContent(new BytesArray(
+                      "{\n" +
+                              "    \"query\" : {\n" +
+                              "        \"match\" : {\n" +
+                              "            \"gender\" : \"{{param_gender}}\"\n" +
+                              "        }\n" +
+                              "    }\n" +
+                              "}"), XContentType.valueOf("mustache"));
 
         //调用STORED脚本
         Map<String, Object> template_params = new HashMap<>();

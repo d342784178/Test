@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/工具使用/es/Scroller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java" afterPath="$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,25 +45,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EsTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EsTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1644">
-              <caret line="483" column="1" lean-forward="true" selection-start-line="483" selection-start-column="1" selection-end-line="483" selection-end-column="1" />
+            <state relative-caret-position="294">
+              <caret line="394" column="60" lean-forward="false" selection-start-line="394" selection-start-column="60" selection-end-line="394" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4072#4088#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryDSL.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java">
+      <file leaf-file-name="Scroller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/Scroller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,6 +107,8 @@
       <find>predi</find>
       <find>QueryBuilders</find>
       <find>QueryBuilders.</find>
+      <find>count</find>
+      <find>scroll</find>
     </findStrings>
     <replaceStrings>
       <replace>User</replace>
@@ -125,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ddd/biz/DispatcherEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/DispatcherService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/factory/TaskSetFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/ddd/biz/AllocateRuleEntity.java" />
@@ -174,8 +176,9 @@
         <option value="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Sync.java" />
         <option value="$PROJECT_DIR$/src/main/java/积累/util/ByteUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/工具使用/es/Scroller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java" />
       </list>
     </option>
   </component>
@@ -254,7 +257,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,6 +367,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -389,21 +392,8 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/java/bytebuddy/agent/StaticLoggerBinder.class&#10;/Users/mic/IdeaProjects/Test/src/main/resources/tj_spkdia_api.h" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/jna" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
-      <recent name="$PROJECT_DIR$/src/main" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="积累.util" />
-      <recent name="数据结构" />
-      <recent name="extension" />
-      <recent name="designpatterns.state" />
-      <recent name="designpatterns.command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/util" />
@@ -411,6 +401,19 @@
       <recent name="$PROJECT_DIR$/src/main/java/bytebuddy/agent" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="工具使用.es" />
+      <recent name="积累.util" />
+      <recent name="数据结构" />
+      <recent name="extension" />
+      <recent name="designpatterns.state" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/jna" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -741,14 +744,8 @@
       <workItem from="1528095246716" duration="1453000" />
       <workItem from="1529545579340" duration="8035000" />
       <workItem from="1529651854006" duration="358000" />
-      <workItem from="1530602440134" duration="668000" />
-    </task>
-    <task id="LOCAL-00001" summary="添加注释">
-      <created>1480770489139</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1480770489139</updated>
+      <workItem from="1530602440134" duration="717000" />
+      <workItem from="1530695194114" duration="828000" />
     </task>
     <task id="LOCAL-00002" summary="添加详细注释">
       <created>1480771675688</created>
@@ -1086,7 +1083,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529651972519</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="es单元测试">
+      <created>1530604544151</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1530604544151</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1122,7 +1126,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367224000" />
+    <option name="totallyTimeSpent" value="368101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1152,8 +1156,8 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.28513733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3978052" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1289,13 +1293,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/MultiplyStrings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/PermutationsII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1637,22 +1634,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1644">
-          <caret line="483" column="1" lean-forward="true" selection-start-line="483" selection-start-column="1" selection-end-line="483" selection-end-column="1" />
+        <state relative-caret-position="382">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/Scroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4072#4088#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="294">
+          <caret line="394" column="60" lean-forward="false" selection-start-line="394" selection-start-column="60" selection-end-line="394" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
