@@ -26,39 +26,15 @@ public class Customer {
         Enumeration rentals              = _rentals.elements();
         String      result               = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
-            double thisAmount = 0;
-            Rental each       = (Rental) rentals.nextElement();
+            Rental each = (Rental) rentals.nextElement();
 
-            switch (each.getMovie().get_priceCode()) {
-                case Movie.REGULAR:
-                    thisAmount += 2;
-                    if (each.getDaysRented() > 2) {
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
-                    }
-                    break;
-                case Movie.CHILDRENS:
-                    thisAmount += each.getDaysRented() * 3;
-                    break;
-                case Movie.NEW_RELEASE:
-                    thisAmount += 1.5;
-                    if (each.getDaysRented() > 3) {
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
-                    }
-                    break;
-                default:
-                    break;
-            }
+            double count = each.countPrice();
 
-            // add grequent renter points
-            frequentRenterPoints++;
-            // add bonus for a two day new release rental
-            if ((each.getMovie().get_priceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) {
-                frequentRenterPoints++;
-            }
+            frequentRenterPoints += each.countPoint();
 
             // show fingures for this rental
-            result += "\t" + each.getMovie().get_title() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + each.getMovie().get_title() + "\t" + String.valueOf(count) + "\n";
+            totalAmount += count;
         }
 
         // add footer lines

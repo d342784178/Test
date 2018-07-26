@@ -18,4 +18,18 @@ public class Rental {
         return _movie;
     }
 
+    /**
+     * @return 总价
+     */
+    public double countPrice() {
+        return getMovie().countPrice(getDaysRented());
+    }
+
+    /**
+     * @return 积分
+     */
+    public int countPoint() {
+        return getMovie().countPoint(getDaysRented());
+    }
+
 }

@@ -1,15 +1,52 @@
 package 重构改善既有代码的设计.unit1;
 
+import java.util.function.Function;
+
 public class Movie {
 
-    public static final int CHILDRENS   = 2;
-    public static final int REGULAR     = 0;
-    public static final int NEW_RELEASE = 1;
+    public enum PriceCode {
+        CHILDRENS(2, dayRented -> {
+            double thisAmount = 0;
+            thisAmount += 2;
+            if (dayRented > 2) {
+                thisAmount += (dayRented - 2) * 1.5;
+            }
+            return thisAmount;
+        }, dayRented -> 1),
+        REGULAR(0, dayRented -> {
+            double thisAmount = 0;
+            thisAmount += dayRented * 3;
+            return thisAmount;
+        }, dayRented -> 1),
+        NEW_RELEASE(1, dayRented -> {
+            double thisAmount = 0;
+            thisAmount += 1.5;
+            if (dayRented > 3) {
+                thisAmount += (dayRented - 3) * 1.5;
+            }
+            return thisAmount;
+        }, dayRented -> {
+            int point = 1;
+            if (dayRented > 1) {
+                point += 1;
+            }
+            return point;
+        }),;
+        int                        code;
+        Function<Integer, Double>  countPrince;
+        Function<Integer, Integer> countPoint;
 
-    private String _title;
-    private int    _priceCode;
+        PriceCode(int code, Function<Integer, Double> countPrince, Function<Integer, Integer> countPoint) {
+            this.code = code;
+            this.countPrince = countPrince;
+            this.countPoint = countPoint;
+        }
+    }
 
-    public Movie(String title, int priceCode) {
+    private String    _title;
+    private PriceCode _priceCode;
+
+    public Movie(String title, PriceCode priceCode) {
         _title = title;
         _priceCode = priceCode;
     }
@@ -22,12 +59,21 @@ public class Movie {
         this._title = _title;
     }
 
-    public int get_priceCode() {
+    public PriceCode get_priceCode() {
         return _priceCode;
     }
 
-    public void set_priceCode(int _priceCode) {
+    public void set_priceCode(PriceCode _priceCode) {
         this._priceCode = _priceCode;
+    }
+
+    public double countPrice(int day) {
+        return _priceCode.countPrince.apply(day);
+    }
+
+    public int countPoint(int day) {
+        return _priceCode.countPoint.apply(day);
+
     }
 
 }
