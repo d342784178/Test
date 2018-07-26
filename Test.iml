@@ -70,14 +70,6 @@
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.client:transport:6.3.0" level="project" />
-    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:transport-netty4-client:6.3.0" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.16.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.16.Final" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.plugin:reindex-client:6.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.client:elasticsearch-rest-client:6.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.2" level="project" />

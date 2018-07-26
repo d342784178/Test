@@ -5,7 +5,6 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class EchoClientHandler extends ChannelHandlerAdapter {
 
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush("客户端请求连接");
