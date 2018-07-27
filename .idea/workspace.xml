@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IProductA.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IProductB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductA1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductA2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductB1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductB2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/leetcode/Candy.java" />
         <option value="$PROJECT_DIR$/src/main/java/leetcode/Combinations.java" />
         <option value="$PROJECT_DIR$/src/main/java/leetcode/CombinationSum.java" />
         <option value="$PROJECT_DIR$/src/main/java/leetcode/CombinationSumII.java" />
@@ -159,10 +150,11 @@
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductB2.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/ProductA1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory1.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory2.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" />
       </list>
     </option>
   </component>
@@ -797,14 +789,7 @@
       <workItem from="1530695194114" duration="1189000" />
       <workItem from="1531471856135" duration="536000" />
       <workItem from="1531475831890" duration="10000" />
-      <workItem from="1532584727316" duration="7523000" />
-    </task>
-    <task id="LOCAL-00006" summary="sdf">
-      <created>1487144531838</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1487144531838</updated>
+      <workItem from="1532584727316" duration="7629000" />
     </task>
     <task id="LOCAL-00007" summary="+hash法&#10;+双指针">
       <created>1487149023201</created>
@@ -1142,7 +1127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532660278527</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="抽象工厂">
+      <created>1532660689838</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1532660689838</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1178,7 +1170,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376531000" />
+    <option name="totallyTimeSpent" value="376637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1251,7 +1243,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="+贪心法" />
     <MESSAGE value="~修改streamDemo代码&#10;" />
     <MESSAGE value="~deallock-&gt;deadlock&#10;" />
     <MESSAGE value="~forkjoin" />
@@ -1276,7 +1267,8 @@
     <MESSAGE value="~" />
     <MESSAGE value="价格重构&#10;积分重构" />
     <MESSAGE value="简单工厂" />
-    <option name="LAST_COMMIT_MESSAGE" value="简单工厂" />
+    <MESSAGE value="抽象工厂" />
+    <option name="LAST_COMMIT_MESSAGE" value="抽象工厂" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1646,14 +1638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/IProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1769,18 +1753,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
           <folding />
         </state>
       </provider>
