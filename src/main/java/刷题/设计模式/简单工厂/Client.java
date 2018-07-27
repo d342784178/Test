@@ -8,6 +8,7 @@ package 刷题.设计模式.简单工厂;
  */
 public class Client {
     public static void main(String args[]) {
+        //适合纵向拓展
         Factory factory = new Factory();
         factory.produce(AProduct.class).echo();
         factory.produce(BProduct.class).echo();
