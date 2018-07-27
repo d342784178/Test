@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/A.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/IPerson.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Person.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/PersonFlyDecorator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,55 +46,7 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/原型/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="A.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/A.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-              <folding>
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="e#785#786#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#1035#1036#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-                <element signature="e#1231#1232#0" expanded="true" />
-                <element signature="e#1363#1364#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
-                <element signature="e#1527#1528#0" expanded="true" />
-                <element signature="e#1559#1560#0" expanded="true" />
-                <element signature="e#1691#1692#0" expanded="true" />
-                <element signature="e#1723#1724#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,13 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/leetcode/LongestPalindromicSubstring.java" />
-        <option value="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" />
-        <option value="$PROJECT_DIR$/src/main/java/alibaba/Test3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/数据结构/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/数据结构/StackI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/数据结构/Queue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/数据结构/Stack.java" />
         <option value="$PROJECT_DIR$/src/main/java/数据结构/QueueByStack.java" />
         <option value="$PROJECT_DIR$/src/main/java/数据结构/StackByQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/jdk1_5/ConditionDemo.java" />
@@ -203,6 +150,13 @@
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/原型/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/A.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/C.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/B.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/A.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/IPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/PersonFlyDecorator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Client.java" />
       </list>
     </option>
   </component>
@@ -330,7 +284,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="刷题" type="462c0819:PsiDirectoryNode" />
               <item name="设计模式" type="462c0819:PsiDirectoryNode" />
-              <item name="建造者" type="462c0819:PsiDirectoryNode" />
+              <item name="装饰器" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
@@ -421,7 +375,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client (3)">
+  <component name="RunManager" selected="Application.Client (4)">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -479,6 +433,25 @@
       <module name="test" />
       <envs />
     </configuration>
+    <configuration name="Client (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="刷题.设计模式.装饰器.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="刷题.设计模式.装饰器.Client" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="test" />
+      <envs />
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -506,25 +479,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="刷题.设计模式.简单工厂.Client" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="test" />
-      <envs />
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="重构改善既有代码的设计.unit1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="重构改善既有代码的设计.unit1.Test" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -695,19 +649,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Client" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Client (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Client (2)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Client (3)" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Client (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Client (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Client (3)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Client (4)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Client (3)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Client (2)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Client (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Client (4)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Client (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Client (2)" />
         <item index="3" class="java.lang.String" itemvalue="Application.Client (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Client" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Client (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -847,14 +801,7 @@
       <workItem from="1530695194114" duration="1189000" />
       <workItem from="1531471856135" duration="536000" />
       <workItem from="1531475831890" duration="10000" />
-      <workItem from="1532584727316" duration="8336000" />
-    </task>
-    <task id="LOCAL-00009" summary="~双指针法">
-      <created>1487223739803</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1487223739803</updated>
+      <workItem from="1532584727316" duration="9302000" />
     </task>
     <task id="LOCAL-00010" summary="+回溯法">
       <created>1487229693981</created>
@@ -1192,7 +1139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532661018291</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="建造者">
+      <created>1532661504663</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1532661504663</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1228,7 +1182,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377344000" />
+    <option name="totallyTimeSpent" value="378310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1241,7 +1195,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
@@ -1302,7 +1255,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="~deallock-&gt;deadlock&#10;" />
     <MESSAGE value="~forkjoin" />
     <MESSAGE value="~pom" />
     <MESSAGE value="+bytebuddy" />
@@ -1327,7 +1279,8 @@
     <MESSAGE value="简单工厂" />
     <MESSAGE value="抽象工厂" />
     <MESSAGE value="原型模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="原型模式" />
+    <MESSAGE value="建造者" />
+    <option name="LAST_COMMIT_MESSAGE" value="建造者" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1401,62 +1354,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.3.0/elasticsearch-6.3.0-sources.jar!/org/elasticsearch/action/update/UpdateRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="152" column="25" lean-forward="false" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.3.0/elasticsearch-6.3.0-sources.jar!/org/elasticsearch/index/reindex/AbstractBulkByScrollRequestBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.3.0/elasticsearch-6.3.0-sources.jar!/org/elasticsearch/index/reindex/UpdateByQueryRequestBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.3.0/elasticsearch-6.3.0-sources.jar!/org/elasticsearch/search/aggregations/AggregationBuilders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.3.0/elasticsearch-6.3.0-sources.jar!/org/elasticsearch/action/search/SearchRequestBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="389" column="65" lean-forward="false" selection-start-line="389" selection-start-column="47" selection-end-line="389" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/QueryDSL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/EsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="339" column="43" lean-forward="true" selection-start-line="339" selection-start-column="43" selection-end-line="339" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/工具使用/es/Scroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.16.Final/netty-transport-4.1.16.Final.jar!/io/netty/channel/ChannelHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1820,10 +1717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/原型/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1853,11 +1750,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/建造者/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/原型/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/C.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/B.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/A.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/IPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/PersonFlyDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
