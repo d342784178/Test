@@ -7,6 +7,9 @@ package 刷题.设计模式.command;
  * Time: 11:24
  */
 public class Client {
+    /**
+     * 目的: 对执行过程的解耦(同步/异步,日志等) 不关心命令接受者
+     */
     public static void main(String args[]) {
         IInvoker syncInvoker = new AsyncInvoker();
         IReceiver receiver = new IReceiver() {

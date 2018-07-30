@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
-    <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="+享元模式&#10;+桥接模式">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/享元模式/package-info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/桥接模式/package-info" />
+    <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java" afterPath="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,21 +44,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package-info" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/享元模式/package-info">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package-info" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/桥接模式/package-info">
+      <file leaf-file-name="ACommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/ACommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+            <state relative-caret-position="238">
+              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding>
+                <element signature="e#181#182#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/IReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -129,8 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/Factory2.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/简单工厂/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/抽象工厂/IFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/单例/A.java" />
@@ -180,6 +190,8 @@
         <option value="$PROJECT_DIR$/src/main/java/工具使用/apache/对象池/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/享元模式/package-info" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/桥接模式/package-info" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/AsyncInvoker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java" />
       </list>
     </option>
   </component>
@@ -309,6 +321,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="刷题" type="462c0819:PsiDirectoryNode" />
               <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="刷题" type="462c0819:PsiDirectoryNode" />
+              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
@@ -1009,14 +1031,7 @@
       <workItem from="1531471856135" duration="536000" />
       <workItem from="1531475831890" duration="10000" />
       <workItem from="1532584727316" duration="15214000" />
-      <workItem from="1532917732205" duration="3148000" />
-    </task>
-    <task id="LOCAL-00016" summary="~">
-      <created>1505032265608</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1505032265608</updated>
+      <workItem from="1532917732205" duration="5620000" />
     </task>
     <task id="LOCAL-00017" summary="~">
       <created>1506174463794</created>
@@ -1354,7 +1369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532931160801</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="+享元模式&#10;+桥接模式">
+      <created>1532931389844</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1532931389844</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1390,7 +1412,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387370000" />
+    <option name="totallyTimeSpent" value="389842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1410,7 +1432,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251029" sideWeight="0.49676898" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32647464" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="18" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31687242" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
@@ -1464,7 +1486,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="命令模式" />
     <MESSAGE value="状态模式" />
     <MESSAGE value="rsa修改" />
     <MESSAGE value="+ExtensionExecutor 参照sofa的ExtensionExecutor" />
@@ -1489,7 +1510,8 @@
     <MESSAGE value="访问者模式" />
     <MESSAGE value="解释器模式" />
     <MESSAGE value="对象池使用" />
-    <option name="LAST_COMMIT_MESSAGE" value="对象池使用" />
+    <MESSAGE value="+享元模式&#10;+桥接模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="+享元模式&#10;+桥接模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1569,24 +1591,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/原型/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/C.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/B.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/Manager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/调停者/A.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/IPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/装饰器/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1903,8 +1907,8 @@
         <state relative-caret-position="223">
           <caret line="591" column="19" lean-forward="true" selection-start-line="591" selection-start-column="19" selection-end-line="591" selection-end-column="19" />
           <folding>
-            <element signature="e#7571#7572#0" expanded="true" />
-            <element signature="e#7609#7610#0" expanded="true" />
+            <element signature="e#7571#7572#0" expanded="false" />
+            <element signature="e#7609#7610#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1914,8 +1918,8 @@
         <state relative-caret-position="442">
           <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#578#584#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#578#584#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1928,6 +1932,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/桥接模式/package-info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/享元模式/package-info">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1936,10 +1948,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/桥接模式/package-info">
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/IReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        <state relative-caret-position="153">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/ACommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/AsyncInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/SyncInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#200#201#0" expanded="false" />
+            <element signature="e#233#234#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/IInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/设计模式/command/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
