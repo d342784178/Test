@@ -33,7 +33,7 @@ public class Rabbit2 {
     }
 
     private void getNum(int target, int[] steps, int index, List<Integer> stepLists) {
-        int step = steps[index];
+        int step = steps[index];//跳的格数
         if (index == steps.length - 1) {
             if (target % step == 0) {
                 stepLists.add(target / step);
@@ -43,9 +43,9 @@ public class Rabbit2 {
             return;
         }
 
-        int t = target / step;
+        int t = target / step;//以step跳法能跳的次数
         int i = 0;
-        while (i <= t) {
+        while (i <= t) {//以能跳的次数都跳一遍
             ArrayList<Integer> objects = new ArrayList<>(stepLists);
             objects.add(i);
             getNum(target - i * step, steps, index + 1, objects);
