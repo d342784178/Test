@@ -8,8 +8,8 @@ import java.util.concurrent.*;
  * Date: 2017/2/7
  */
 public class CompletionServiceDemo implements Callable<String> {
-    //CompletionService 类似 ThreadPool+BlockingQueue+FutureTask
-    //用途:生产者消费者模型(如果没有消费者 当到达指定容量不会继续生产) 并且可以获取到生产的结果
+    //CompletionService
+    //用途: 区别于ThreadPoolExecutor take()时不按提交顺序返回 而是按完成顺序返回
 
     private int id;
 
@@ -30,6 +30,7 @@ public class CompletionServiceDemo implements Callable<String> {
         service.shutdown();
     }
 
+    @Override
     public String call() throws Exception {
         Integer time = (int) (Math.random() * 1000);
         try {
