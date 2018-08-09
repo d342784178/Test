@@ -4,12 +4,11 @@ import java.util.concurrent.*;
 
 /**
  * Desc:  CompletionService
+ * 区别于ThreadPoolExecutor take()时不按提交顺序返回 而是按完成顺序返回
  * author: DLJ
  * Date: 2017/2/7
  */
 public class CompletionServiceDemo implements Callable<String> {
-    //CompletionService
-    //用途: 区别于ThreadPoolExecutor take()时不按提交顺序返回 而是按完成顺序返回
 
     private int id;
 
