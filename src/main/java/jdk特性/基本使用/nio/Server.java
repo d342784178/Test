@@ -1,24 +1,32 @@
 package jdk特性.基本使用.nio;
 
+import com.google.common.collect.Maps;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.*;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 import java.util.Iterator;
-import java.util.Scanner;
+import java.util.Map;
 import java.util.Set;
 
 /**
- * Desc:
+ * @link http://www.infoq.com/cn/articles/netty-threading-model
+ * 注意: reactor线程模型不包括业务处理 只包含tcp连接(connect),读写(r/w)过程的处理
+ * Desc: reactor单线程
+ * 1. 所有事件处理在同一个线程(不包括业务处理) 一个selector
  * Author: DLJ
  * Date:
  */
 public class Server {
-    private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
-    private ByteBuffer readBuffer  = ByteBuffer.allocate(1024);
+
 
     public Server() {
         new Thread(new Runnable() {
+            @Override
             public void run() {
                 try {
                     init();
@@ -27,19 +35,8 @@ public class Server {
                 }
             }
         }).start();
-        try {
-            putData();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
-    private void putData() throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            writeBuffer.put(scanner.nextLine().getBytes());
-        }
-    }
 
     private void init() throws Exception {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
@@ -48,38 +45,64 @@ public class Server {
         Selector selector = Selector.open();
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         while (true) {
-            int ready = selector.select();
+            int ready = selector.select(500);
+            //防止空转
             if (ready > 0) {
                 Set<SelectionKey>      selectionKeys = selector.selectedKeys();
                 Iterator<SelectionKey> iterator      = selectionKeys.iterator();
                 while (iterator.hasNext()) {
                     SelectionKey selectionKey = iterator.next();
                     iterator.remove();
-                    if (selectionKey.isConnectable()) {
-                    } else if (selectionKey.isAcceptable()) {
+                    if (selectionKey.isAcceptable()) {
                         SocketChannel socketChannel = serverSocketChannel.accept();
                         socketChannel.configureBlocking(false);
-                        socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+                        socketChannel.register(selector, SelectionKey.OP_READ);
                         System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
-                    } else if (selectionKey.isReadable()) {
+                    }
+                    if (selectionKey.isReadable()) {
+                        System.out.println("读事件就绪");
                         SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                         socketChannel.configureBlocking(false);
-                        int read = socketChannel.read(readBuffer);
+                        SocketContext socketContext = SocketContext.get(socketChannel);
+                        ByteBuffer    readBuffer    = socketContext.getReadBuffer();
+                        int           read          = socketChannel.read(readBuffer);
                         readBuffer.flip();
                         if (read > 0) {
-                            System.out.print(new String(readBuffer.array(), 0, read));
+                            System.out.println(new String(readBuffer.array(), 0, read));
+                        } else if (read == -1) {
+                            System.out.println("断开..."
+                                    + socketChannel.socket().getRemoteSocketAddress());
+                            socketChannel.close();
                         }
-                    } else if (selectionKey.isWritable()) {
-                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                        socketChannel.configureBlocking(false);
-                        writeBuffer.flip();
-                        while (writeBuffer.hasRemaining()) {
-                            socketChannel.write(writeBuffer);
-                        }
-                        writeBuffer.clear();
+                        readBuffer.clear();
                     }
                 }
             }
+        }
+    }
+
+    public static class SocketContext {
+        private static Map<SocketChannel, SocketContext> map = Maps.newConcurrentMap();
+
+        public static SocketContext get(SocketChannel socketChannel) {
+            if (map.containsKey(socketChannel)) {
+                return map.get(socketChannel);
+            } else {
+                SocketContext value = new SocketContext();
+                map.put(socketChannel, value);
+                return value;
+            }
+        }
+
+        private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+        private ByteBuffer readBuffer  = ByteBuffer.allocate(1024);
+
+        public ByteBuffer getWriteBuffer() {
+            return writeBuffer;
+        }
+
+        public ByteBuffer getReadBuffer() {
+            return readBuffer;
         }
     }
 
