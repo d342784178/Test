@@ -1,6 +1,8 @@
 package jdk特性.基本使用.nio;
 
 import com.google.common.collect.Lists;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.UnpooledByteBufAllocator;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,7 +18,7 @@ import java.util.Scanner;
  * Desc: ${DESCIPTION} User: DLJ Date: 2016/12/3
  */
 public class Client {
-    private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+    private ByteBuf writeBuffer = new UnpooledByteBufAllocator(false).buffer(2048);
 
     public Client() {
         new Thread(new Runnable() {
@@ -32,7 +34,7 @@ public class Client {
     }
 
     public void write(byte[] bytes) {
-        writeBuffer.put(bytes);
+        writeBuffer.writeBytes(bytes);
     }
 
     private void init() throws Exception {
@@ -43,12 +45,18 @@ public class Client {
         channel.connect(new InetSocketAddress("localhost", 5555));
         while (true) {
             if (channel.isConnected()) {
-                //TODO 当socket发送缓冲区满了 会发生空转
-                writeBuffer.flip();
-                while (writeBuffer.hasRemaining()) {
-                    channel.write(writeBuffer);
+                //TODO 当socket发送缓冲区满了 channel.write(byteBuffer)写不进去 会发生空转
+                while (writeBuffer.isReadable()) {
+                    ByteBuffer byteBuffer = writeBuffer.nioBuffer();
+                    channel.write(byteBuffer);
+                    int left = byteBuffer.limit() - byteBuffer.position();
+                    if (left != 0) {
+                        System.err.print("a");
+                        break;
+                    }
+                    //TODO writebuffer会用完
+                    writeBuffer.readerIndex(writeBuffer.readerIndex() + byteBuffer.position());
                 }
-                writeBuffer.clear();
             }
             //当没有事件触发时会阻塞
             int ready = selector.select(500);
@@ -86,7 +94,7 @@ public class Client {
 
     public static void main(String args[]) throws IOException {
         ArrayList<Client> clients = Lists.newArrayList();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             Client client = new Client();
             client.write(("hello" + i).getBytes());
             clients.add(client);
