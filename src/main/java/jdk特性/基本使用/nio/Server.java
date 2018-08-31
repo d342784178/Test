@@ -12,6 +12,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @link http://www.infoq.com/cn/articles/netty-threading-model
@@ -39,6 +40,7 @@ public class Server {
 
 
     private void init() throws Exception {
+        AtomicInteger       a                   = new AtomicInteger();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.socket().bind(new InetSocketAddress(5555));
         serverSocketChannel.configureBlocking(false);
@@ -60,7 +62,6 @@ public class Server {
                         System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
                     }
                     if (selectionKey.isReadable()) {
-                        System.out.println("读事件就绪");
                         SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                         socketChannel.configureBlocking(false);
                         SocketContext socketContext = SocketContext.get(socketChannel);
@@ -68,11 +69,14 @@ public class Server {
                         int           read          = socketChannel.read(readBuffer);
                         readBuffer.flip();
                         if (read > 0) {
-                            System.out.println(new String(readBuffer.array(), 0, read));
+                            a.addAndGet(1);
+                            //System.out.println(ByteUtils.getInt(readBuffer.array()));
                         } else if (read == -1) {
                             System.out.println("断开..."
                                     + socketChannel.socket().getRemoteSocketAddress());
                             socketChannel.close();
+                            System.out.println(a.getAndSet(0));
+
                         }
                         readBuffer.clear();
                     }
@@ -95,7 +99,7 @@ public class Server {
         }
 
         private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
-        private ByteBuffer readBuffer  = ByteBuffer.allocate(1024);
+        private ByteBuffer readBuffer  = ByteBuffer.allocate(4);
 
         public ByteBuffer getWriteBuffer() {
             return writeBuffer;

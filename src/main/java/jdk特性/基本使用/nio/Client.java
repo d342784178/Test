@@ -3,6 +3,7 @@ package jdk特性.基本使用.nio;
 import com.google.common.collect.Lists;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.UnpooledByteBufAllocator;
+import 积累.util.ByteUtils;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -12,20 +13,20 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 
 /**
  * Desc: ${DESCIPTION} User: DLJ Date: 2016/12/3
  */
 public class Client {
-    private ByteBuf writeBuffer = new UnpooledByteBufAllocator(false).buffer(2048);
+    private ByteBuf       writeBuffer = new UnpooledByteBufAllocator(false).buffer(1024 * 5, 1024 * 100);
+    private SocketChannel channel;
 
     public Client() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    init();
+                    init2();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -33,33 +34,20 @@ public class Client {
         }).start();
     }
 
-    public void write(byte[] bytes) {
-        writeBuffer.writeBytes(bytes);
-    }
 
-    private void init() throws Exception {
-        SocketChannel channel = SocketChannel.open();
+    private void init2() throws Exception {
+        channel = SocketChannel.open();
         channel.configureBlocking(false);
         Selector selector = Selector.open();
         channel.register(selector, SelectionKey.OP_CONNECT);
         channel.connect(new InetSocketAddress("localhost", 5555));
-        while (true) {
-            if (channel.isConnected()) {
-                //TODO 当socket发送缓冲区满了 channel.write(byteBuffer)写不进去 会发生空转
-                while (writeBuffer.isReadable()) {
-                    ByteBuffer byteBuffer = writeBuffer.nioBuffer();
-                    channel.write(byteBuffer);
-                    int left = byteBuffer.limit() - byteBuffer.position();
-                    if (left != 0) {
-                        System.err.print("a");
-                        break;
-                    }
-                    //TODO writebuffer会用完
-                    writeBuffer.readerIndex(writeBuffer.readerIndex() + byteBuffer.position());
-                }
+        while (channel.isOpen()) {
+            if (channel.isConnected() && writeBuffer.isReadable()) {
+                //writeBuffer可读 注册write事件
+                channel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
             }
             //当没有事件触发时会阻塞
-            int ready = selector.select(500);
+            int ready = selector.select(20);
             if (ready > 0) {
                 Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
                 while (iterator.hasNext()) {
@@ -72,7 +60,8 @@ public class Client {
                             socketChannel.finishConnect();
                         }
                         socketChannel.register(selector, SelectionKey.OP_READ);
-                    } else if (selectionKey.isReadable()) {
+                    }
+                    if (selectionKey.isReadable()) {
                         System.out.println("读事件就绪");
                         ByteBuffer readBuffer = Server.SocketContext.get(socketChannel).getReadBuffer();
                         int        read       = socketChannel.read(readBuffer);
@@ -85,28 +74,75 @@ public class Client {
                             socketChannel.close();
                         }
                     }
+                    if (selectionKey.isWritable()) {
+                        while (writeBuffer.isReadable()) {
+                            ByteBuffer byteBuffer = writeBuffer.nioBuffer();
+                            channel.write(byteBuffer);
+                            writeBuffer.readerIndex(writeBuffer.readerIndex() + byteBuffer.position());
+                            int left = byteBuffer.limit() - byteBuffer.position();
+                            if (left != 0) {//无法一次性写入到缓冲区中,可能发生空转 break
+                                System.err.print("a");
+                                if (writeBuffer.writerIndex() > (writeBuffer.maxCapacity() / 3 * 2) && writeBuffer.writerIndex() - writeBuffer
+                                        .readerIndex() < (writeBuffer.maxCapacity() / 3)) {
+                                    writeBuffer.discardReadBytes();
+                                    System.out.println(String.format("缓冲区使用超过2/3 discardReadBytes writerIndex:%d " +
+                                            "readerIndex:%d", writeBuffer
+                                            .writerIndex(), writeBuffer.readerIndex()));
+                                }
+                                //防止空转 等待下次write事件
+                                break;
+                            } else {
+                                //注意clear()的使用 因为writeBuffer一直在写入 writerIndex可能>readIndex
+                                if (writeBuffer.writerIndex() == writeBuffer.readerIndex()) {
+                                    //TODO 因为不是原子过程 理论上会有问题 但实际验证中却没问题 待验证
+                                    writeBuffer.clear();
+                                    System.out.println("clear");
+                                } else {
+                                    System.out.println("discardReadBytes");
+                                    writeBuffer.discardReadBytes();
+                                }
+
+                            }
+                        }
+                        //writeBuffer不可读 注销write事件
+                        if (!writeBuffer.isReadable()) {
+                            socketChannel.register(selector, SelectionKey.OP_READ);
+                        }
+                    }
                 }
             }
         }
+    }
 
+    public void close() {
+        try {
+            //TODO 怎么保证写出完成
+            channel.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void write(byte[] bytes) {
+        //TODO 如何防止缓冲区溢出
+        writeBuffer.writeBytes(bytes);
     }
 
     public static void main(String args[]) throws IOException {
         ArrayList<Client> clients = Lists.newArrayList();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1; i++) {
             Client client = new Client();
-            client.write(("hello" + i).getBytes());
             clients.add(client);
         }
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            String s = scanner.nextLine();
+        for (int i = 0; i < 1024 / 4 * 150; i++) {
+            int finalI = i;
             clients.forEach(client -> {
-                client.write(s.getBytes());
+                //线程安全
+                client.write(ByteUtils.getBytes(finalI));
             });
         }
-
-
+        //clients.forEach(client -> {
+        //    client.close();
+        //});
     }
 }
