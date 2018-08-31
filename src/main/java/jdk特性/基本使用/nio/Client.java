@@ -15,7 +15,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Desc: ${DESCIPTION} User: DLJ Date: 2016/12/3
+ * Desc: nio客户端
+ * 1.writeable事件 不要一直订阅 因为当socket缓冲区可写入时就会触发该事件
+ * 2.
+ * Author: ljdong2
+ * Date: 2018/8/31
  */
 public class Client {
     private ByteBuf       writeBuffer = new UnpooledByteBufAllocator(false).buffer(1024 * 5, 1024 * 10000);
@@ -26,7 +30,7 @@ public class Client {
             @Override
             public void run() {
                 try {
-                    init2();
+                    init();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -35,7 +39,7 @@ public class Client {
     }
 
 
-    private void init2() throws Exception {
+    private void init() throws Exception {
         channel = SocketChannel.open();
         channel.configureBlocking(false);
         Selector selector = Selector.open();
@@ -46,8 +50,9 @@ public class Client {
                 //writeBuffer可读 注册write事件
                 channel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
             }
-            //当没有事件触发时会阻塞
-            int ready = selector.select(20);
+            // 当采用临时订阅OP_WRITE方式 必须使用select(ms)进行超时返回
+            // 因为很有可能当select()前极短时间内writeBuffer有数据,而此时没有订阅OP_WRITE事件,会使select()一直阻塞
+            int ready = selector.select(300);
             if (ready > 0) {
                 Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
                 while (iterator.hasNext()) {
