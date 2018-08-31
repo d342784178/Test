@@ -60,7 +60,6 @@ public class Server3 {
                                     SocketChannel socketChannel = serverSocketChannel.accept();
                                     socketChannel.configureBlocking(false);
                                     rwPool.submit(new Worker(socketChannel));
-
                                 }
                             }
                         }
@@ -96,24 +95,7 @@ public class Server3 {
                     Set<SelectionKey>      selectionKeys = selector.selectedKeys();
                     Iterator<SelectionKey> iterator      = selectionKeys.iterator();
                     while (iterator.hasNext()) {
-                        SelectionKey selectionKey = iterator.next();
-                        iterator.remove();
-                        if (selectionKey.isReadable()) {
-                            SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                            socketChannel.configureBlocking(false);
-                            ByteBuffer readBuffer = Server.SocketContext.get(socketChannel).getReadBuffer();
-                            int        read       = socketChannel.read(readBuffer);
-                            readBuffer.flip();
-                            if (read > 0) {
-                                System.out.println(new String(readBuffer.array(), 0, read));
-                            }else if (read == -1) {
-                                System.out.println("断开..."
-                                        + socketChannel.socket().getRemoteSocketAddress());
-                                socketChannel.close();
-                            }
-                            readBuffer.clear();
-
-                        }
+                   //...
                     }
                 }
             } catch (IOException e) {

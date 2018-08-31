@@ -2,11 +2,9 @@ package jdk特性.基本使用.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -51,34 +49,14 @@ public class Server2 {
                     SelectionKey selectionKey = iterator.next();
                     iterator.remove();
                     if (selectionKey.isConnectable()) {
-                    } else if (selectionKey.isAcceptable()) {
-                        SocketChannel socketChannel = serverSocketChannel.accept();
-                        socketChannel.configureBlocking(false);
-                        socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-                        System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
+                    }
+                    if (selectionKey.isAcceptable()) {
+                        //...
                     } else {
                         executorService.submit(new Runnable() {
                             @Override
                             public void run() {
-                                try {
-                                    if (selectionKey.isReadable()) {
-                                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
-                                        socketChannel.configureBlocking(false);
-                                        ByteBuffer readBuffer = Server.SocketContext.get(socketChannel).getReadBuffer();
-                                        int        read       = socketChannel.read(readBuffer);
-                                        readBuffer.flip();
-                                        if (read > 0) {
-                                            System.out.println(new String(readBuffer.array(), 0, read));
-                                        }else if (read == -1) {
-                                            System.out.println("断开..."
-                                                    + socketChannel.socket().getRemoteSocketAddress());
-                                            socketChannel.close();
-                                        }
-                                        readBuffer.clear();
-                                    }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                                //...
                             }
                         });
                     }
