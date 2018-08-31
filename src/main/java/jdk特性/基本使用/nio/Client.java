@@ -18,7 +18,7 @@ import java.util.Iterator;
  * Desc: ${DESCIPTION} User: DLJ Date: 2016/12/3
  */
 public class Client {
-    private ByteBuf       writeBuffer = new UnpooledByteBufAllocator(false).buffer(1024 * 5, 1024 * 100);
+    private ByteBuf       writeBuffer = new UnpooledByteBufAllocator(false).buffer(1024 * 5, 1024 * 10000);
     private SocketChannel channel;
 
     public Client() {
@@ -84,10 +84,10 @@ public class Client {
                                 System.err.print("a");
                                 if (writeBuffer.writerIndex() > (writeBuffer.maxCapacity() / 3 * 2) && writeBuffer.writerIndex() - writeBuffer
                                         .readerIndex() < (writeBuffer.maxCapacity() / 3)) {
-                                    writeBuffer.discardReadBytes();
                                     System.out.println(String.format("缓冲区使用超过2/3 discardReadBytes writerIndex:%d " +
                                             "readerIndex:%d", writeBuffer
                                             .writerIndex(), writeBuffer.readerIndex()));
+                                    writeBuffer.discardReadBytes();
                                 }
                                 //防止空转 等待下次write事件
                                 break;
@@ -117,6 +117,18 @@ public class Client {
     public void close() {
         try {
             //TODO 怎么保证写出完成
+            while (true) {
+                int canWrite = writeBuffer.writerIndex() - writeBuffer.readerIndex();
+                if (canWrite != 0) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    break;
+                }
+            }
             channel.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,7 +136,20 @@ public class Client {
     }
 
     public void write(byte[] bytes) {
-        //TODO 如何防止缓冲区溢出
+        //如何防止缓冲区溢出
+        while (true) {
+            int canWrite = writeBuffer.maxCapacity() - writeBuffer.writerIndex();
+            if (canWrite < bytes.length) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                break;
+            }
+        }
+
         writeBuffer.writeBytes(bytes);
     }
 
@@ -134,15 +159,15 @@ public class Client {
             Client client = new Client();
             clients.add(client);
         }
-        for (int i = 0; i < 1024 / 4 * 150; i++) {
+        for (int i = 0; i < 1024 / 4 * 15000; i++) {
             int finalI = i;
             clients.forEach(client -> {
                 //线程安全
                 client.write(ByteUtils.getBytes(finalI));
             });
         }
-        //clients.forEach(client -> {
-        //    client.close();
-        //});
+        clients.forEach(client -> {
+            client.close();
+        });
     }
 }
