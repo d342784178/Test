@@ -13,6 +13,8 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Desc: nio客户端
@@ -46,16 +48,18 @@ public class Client {
         channel.register(selector, SelectionKey.OP_CONNECT);
         channel.connect(new InetSocketAddress("localhost", 5555));
         while (channel.isOpen()) {
-            if (channel.isConnected() && writeBuffer.isReadable()) {
-                //writeBuffer可读 注册write事件
-                channel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-            }
-            // 当采用临时订阅OP_WRITE方式 必须使用select(ms)进行超时返回
-            // 因为很有可能当select()前极短时间内writeBuffer有数据,而此时没有订阅OP_WRITE事件,会使select()一直阻塞
-            int ready = selector.select(300);
+            int ready = selector.select();
             if (ready > 0) {
                 Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
                 while (iterator.hasNext()) {
+                    if (writeBuffer.writerIndex() > (writeBuffer.maxCapacity() / 3 * 2) && writeBuffer.writerIndex() - writeBuffer
+                            .readerIndex() < (writeBuffer.maxCapacity() / 3)) {
+                        System.out.println(String.format("缓冲区使用超过2/3 discardReadBytes writerIndex:%d " +
+                                "readerIndex:%d", writeBuffer
+                                .writerIndex(), writeBuffer.readerIndex()));
+                        writeBuffer.discardReadBytes();
+                    }
+
                     SelectionKey selectionKey = iterator.next();
                     iterator.remove();
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
@@ -64,7 +68,7 @@ public class Client {
                         if (socketChannel.isConnectionPending()) {
                             socketChannel.finishConnect();
                         }
-                        socketChannel.register(selector, SelectionKey.OP_READ);
+                        socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
                     }
                     if (selectionKey.isReadable()) {
                         System.out.println("读事件就绪");
@@ -80,41 +84,46 @@ public class Client {
                         }
                     }
                     if (selectionKey.isWritable()) {
-                        while (writeBuffer.isReadable()) {
-                            ByteBuffer byteBuffer = writeBuffer.nioBuffer();
-                            channel.write(byteBuffer);
-                            writeBuffer.readerIndex(writeBuffer.readerIndex() + byteBuffer.position());
-                            int left = byteBuffer.limit() - byteBuffer.position();
-                            if (left != 0) {//无法一次性写入到缓冲区中,可能发生空转 break
-                                System.err.print("a");
-                                if (writeBuffer.writerIndex() > (writeBuffer.maxCapacity() / 3 * 2) && writeBuffer.writerIndex() - writeBuffer
-                                        .readerIndex() < (writeBuffer.maxCapacity() / 3)) {
-                                    System.out.println(String.format("缓冲区使用超过2/3 discardReadBytes writerIndex:%d " +
-                                            "readerIndex:%d", writeBuffer
-                                            .writerIndex(), writeBuffer.readerIndex()));
-                                    writeBuffer.discardReadBytes();
-                                }
-                                //防止空转 等待下次write事件
-                                break;
-                            } else {
-                                //注意clear()的使用 因为writeBuffer一直在写入 writerIndex可能>readIndex
-                                if (writeBuffer.writerIndex() == writeBuffer.readerIndex()) {
-                                    //TODO 因为不是原子过程 理论上会有问题 但实际验证中却没问题 待验证
-                                    writeBuffer.clear();
-                                    System.out.println("clear");
-                                } else {
-                                    System.out.println("discardReadBytes");
-                                    writeBuffer.discardReadBytes();
-                                }
-
+                        //改为主动读取式
+                        ByteBuffer byteBuffer = awaitGetWrite(writeBuffer, 30, 50);
+                        if (byteBuffer != null) {
+                            int write = channel.write(byteBuffer);
+                            writeBuffer.readerIndex(writeBuffer.readerIndex() + write);
+                            if (write != byteBuffer.limit()) {
+                                System.out.print("a");
                             }
-                        }
-                        //writeBuffer不可读 注销write事件
-                        if (!writeBuffer.isReadable()) {
-                            socketChannel.register(selector, SelectionKey.OP_READ);
                         }
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * 等待获取写缓存
+     * @param byteBuf 缓冲区
+     * @param ms      缓冲时间 防止空转
+     * @param cap     阈值:超过则直接返回,没超过等待ms后判断是否超过阈值
+     * @return
+     */
+    public ByteBuffer awaitGetWrite(ByteBuf byteBuf, long ms, int cap) {
+        //缓冲大小 稍大于socket缓冲区大小最好 自己调整
+        int socketCap = 1024 * 100;
+        if (byteBuf.readableBytes() >= cap) {//>=cap直接返回
+            return byteBuf.copy(0, byteBuf.readableBytes() > socketCap ? socketCap : byteBuf.readableBytes())
+                          .nioBuffer();
+        } else {//<cap等待
+            CountDownLatch countDownLatch = new CountDownLatch(1);
+            try {
+                countDownLatch.await(ms, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (byteBuf.readableBytes() > 0) {
+                return byteBuf.copy(0, byteBuf.readableBytes() > socketCap ? socketCap : byteBuf.readableBytes())
+                              .nioBuffer();
+            } else {
+                return null;
             }
         }
     }
@@ -164,6 +173,7 @@ public class Client {
             Client client = new Client();
             clients.add(client);
         }
+        long l = System.currentTimeMillis();
         for (int i = 0; i < 1024 / 4 * 15000; i++) {
             int finalI = i;
             clients.forEach(client -> {
@@ -171,8 +181,7 @@ public class Client {
                 client.write(ByteUtils.getBytes(finalI));
             });
         }
-        clients.forEach(client -> {
-            client.close();
-        });
+        clients.forEach(Client::close);
+        System.out.println(System.currentTimeMillis() - l);
     }
 }
