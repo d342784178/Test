@@ -4,8 +4,6 @@
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="~">
       <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" afterDir="false" />
     </list>
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,7 +47,7 @@
     <session id="1294593664">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="4" />
@@ -73,14 +71,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6713" />
-          <entry key="txt" value="48" />
+          <entry key="java" value="6714" />
+          <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6713" />
-          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="JAVA" value="6714" />
+          <entry key="PLAIN_TEXT" value="59" />
         </counts>
       </usages-collector>
     </session>
@@ -93,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="199">
+              <caret line="128" column="5" selection-start-line="103" selection-start-column="3" selection-end-line="128" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -102,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+            <state relative-caret-position="822">
+              <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -277,7 +275,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="796" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -738,14 +736,7 @@
       <workItem from="1535630060316" duration="132000" />
       <workItem from="1535630280030" duration="12275000" />
       <workItem from="1535704419939" duration="263000" />
-      <workItem from="1536113913656" duration="10053000" />
-    </task>
-    <task id="LOCAL-00029" summary="状态模式">
-      <created>1519279812591</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1519279812591</updated>
+      <workItem from="1536113913656" duration="11267000" />
     </task>
     <task id="LOCAL-00030" summary="rsa修改">
       <created>1519702646243</created>
@@ -1083,7 +1074,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536114207962</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="采用主动写方式">
+      <created>1536145760247</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1536145760248</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1119,7 +1117,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521560000" />
+    <option name="totallyTimeSpent" value="522774000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1193,7 +1191,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="增加BeanCopier" />
     <MESSAGE value="增加同步/异步 阻塞/非阻塞代码" />
     <MESSAGE value="lis问题" />
     <MESSAGE value="+栈实现" />
@@ -1218,7 +1215,8 @@
     <MESSAGE value="nio修改 针对write事件" />
     <MESSAGE value="使用bytebuf替换bytebuffer" />
     <MESSAGE value="~" />
-    <option name="LAST_COMMIT_MESSAGE" value="~" />
+    <MESSAGE value="采用主动写方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="采用主动写方式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1688,13 +1686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1702,10 +1693,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="128" column="5" selection-start-line="103" selection-start-column="3" selection-end-line="128" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+        <state relative-caret-position="822">
+          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
