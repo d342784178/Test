@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="~">
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -47,37 +47,37 @@
     <session id="1294593664">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="4" />
+          <entry key="project.closed" value="18" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.2" value="5" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="119" />
+          <entry key="class" value="3" />
+          <entry key="java" value="128" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="119" />
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="128" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6714" />
+          <entry key="java" value="8740" />
           <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6714" />
+          <entry key="JAVA" value="8740" />
           <entry key="PLAIN_TEXT" value="59" />
         </counts>
       </usages-collector>
@@ -88,32 +88,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="128" column="5" selection-start-line="103" selection-start-column="3" selection-end-line="128" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+            <state relative-caret-position="212">
+              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="159" column="85" selection-start-line="159" selection-start-column="85" selection-end-line="159" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -127,8 +109,8 @@
         <option value="mybatis-config" />
         <option value="mybatis-generator-config" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/备忘录/Originnator.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/备忘录/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/备忘录/BackupManagerProxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/备忘录/BackupManagerDecorator.java" />
@@ -230,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java" />
       </list>
     </option>
   </component>
@@ -306,83 +288,7 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jdk特性" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jdk特性" type="462c0819:PsiDirectoryNode" />
-              <item name="基本使用" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jdk特性" type="462c0819:PsiDirectoryNode" />
-              <item name="基本使用" type="462c0819:PsiDirectoryNode" />
-              <item name="nio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
-              <item name="transport" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -458,7 +364,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client (1)">
+  <component name="RunManager" selected="JUnit.KmpTest">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -514,22 +420,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rpc.transport.Server" />
-      <module name="test" />
+    <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="rpc.transport.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="KmpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="刷题.算法.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="刷题.算法" />
+      <option name="MAIN_CLASS_NAME" value="刷题.算法.KmpTest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KmpTest.testGetNextArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="刷题.算法.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="刷题.算法" />
+      <option name="MAIN_CLASS_NAME" value="刷题.算法.KmpTest" />
+      <option name="METHOD_NAME" value="testGetNextArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KmpTest.testKmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="刷题.算法.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="刷题.算法" />
+      <option name="MAIN_CLASS_NAME" value="刷题.算法.KmpTest" />
+      <option name="METHOD_NAME" value="testKmp" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -559,15 +500,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Client (1)" />
+      <item itemvalue="JUnit.KmpTest.testGetNextArray" />
+      <item itemvalue="JUnit.KmpTest.testKmp" />
+      <item itemvalue="JUnit.KmpTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KmpTest" />
+        <item itemvalue="JUnit.KmpTest.testKmp" />
+        <item itemvalue="JUnit.KmpTest.testGetNextArray" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -737,13 +682,8 @@
       <workItem from="1535630280030" duration="12275000" />
       <workItem from="1535704419939" duration="263000" />
       <workItem from="1536113913656" duration="11267000" />
-    </task>
-    <task id="LOCAL-00030" summary="rsa修改">
-      <created>1519702646243</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1519702646243</updated>
+      <workItem from="1536225965238" duration="2118000" />
+      <workItem from="1536284699571" duration="4740000" />
     </task>
     <task id="LOCAL-00031" summary="+ExtensionExecutor 参照sofa的ExtensionExecutor">
       <created>1520217756861</created>
@@ -1081,43 +1021,50 @@
       <option name="project" value="LOCAL" />
       <updated>1536145760248</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="~">
+      <created>1536226097684</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1536226097685</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BoundedBufferTest_test - 2018.08.09 at 16h 19m 29s.xml">
-      <configuration name="BoundedBufferTest.test" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 10h 55m 50s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoundedBufferTest_test - 2018.08.09 at 16h 20m 08s.xml">
-      <configuration name="BoundedBufferTest.test" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 10h 56m 29s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoundedBufferTest_test - 2018.08.09 at 16h 21m 05s.xml">
-      <configuration name="BoundedBufferTest.test" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 10h 57m 03s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 50m 07s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 10h 57m 18s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 52m 26s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 10h 57m 47s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 52m 38s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 11h 01m 03s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 53m 02s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 11h 01m 35s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 53m 10s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 11h 01m 53s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 53m 17s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 11h 04m 26s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleExecutorServiceTest_tt - 2018.08.09 at 14h 53m 34s.xml">
-      <configuration name="SimpleExecutorServiceTest.tt" configurationId="JUnit" />
+    <history-entry file="KmpTest_testKmp - 2018.09.07 at 11h 04m 34s.xml">
+      <configuration name="KmpTest.testKmp" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="522774000" />
+    <option name="totallyTimeSpent" value="529632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1214,9 +1161,9 @@
     <MESSAGE value="CompletionServiceDemo.java" />
     <MESSAGE value="nio修改 针对write事件" />
     <MESSAGE value="使用bytebuf替换bytebuffer" />
-    <MESSAGE value="~" />
     <MESSAGE value="采用主动写方式" />
-    <option name="LAST_COMMIT_MESSAGE" value="采用主动写方式" />
+    <MESSAGE value="~" />
+    <option name="LAST_COMMIT_MESSAGE" value="~" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,6 +1216,12 @@
           <properties />
           <option name="timeStamp" value="341" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="345" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1281,6 +1234,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>j</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>readBuffer.writeBytes(allocate.array(), 0, read);</expression-string>
         <language-id>JAVA</language-id>
@@ -1322,11 +1280,6 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>writeBuffer.writerIndex() &gt; (writeBuffer.maxCapacity() / 3 * 2)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="breakpointLogExpression">
       <expression>
@@ -1337,34 +1290,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/netty/netty/3.2.5.Final/netty-3.2.5.Final-sources.jar!/org/jboss/netty/util/VirtualExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ScheduledThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16136">
-          <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/19.0/guava-19.0-sources.jar!/com/google/common/annotations/GwtCompatible.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/19.0/guava-19.0-sources.jar!/com/google/common/util/concurrent/TrustedListenableFutureTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/19.0/guava-19.0-sources.jar!/com/google/common/util/concurrent/AbstractListeningExecutorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -1573,10 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-          <folding>
-            <element signature="e#4288#4289#0" expanded="true" />
-            <element signature="e#4315#4316#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1601,20 +1522,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="87" column="6" lean-forward="true" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioServer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioClient.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/NioDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
@@ -1647,10 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-          <folding>
-            <element signature="e#1682#1683#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1672,10 +1577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="932" column="20" lean-forward="true" selection-start-line="932" selection-start-column="20" selection-end-line="932" selection-end-column="20" />
-          <folding>
-            <element signature="e#24597#24598#0" expanded="true" />
-            <element signature="e#24659#24660#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1686,10 +1587,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="159" column="85" selection-start-line="159" selection-start-column="85" selection-end-line="159" selection-end-column="85" />
+        <state relative-caret-position="646">
+          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1700,10 +1601,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rpc/transport/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+        <state relative-caret-position="80">
+          <caret line="159" column="85" selection-start-line="159" selection-start-column="85" selection-end-line="159" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="273" selection-start-line="273" selection-end-line="273" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
