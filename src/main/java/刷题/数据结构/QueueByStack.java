@@ -7,7 +7,6 @@ import org.junit.Assert;
  * 1. in/out两个栈
  * 2. in入栈 out出栈
  * 3. out全部出栈后 再把in栈内的导过来
- * 缺点: out一直不出栈的话, in越来越长
  * Author: ljdong2
  * Date: 2018-03-28
  * Time: 20:08
