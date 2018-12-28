@@ -4,10 +4,13 @@ import org.junit.Assert;
 
 /**
  * Desc: 两个队列实现栈
+ * 1. in/out队列
+ * 2. in入队 out出队
+ * 3.
  * Author: ljdong2
  * Date: 2018-03-28
  * Time: 20:08
- * https://img-blog.csdn.net/20150902105019731
+ * https://img-blog.csdn.net/20150902105044136
  */
 public class StackByQueue implements StackI<Integer> {
     private Queue<Integer> in  = new Queue<>();
@@ -68,9 +71,11 @@ public class StackByQueue implements StackI<Integer> {
         stack.push(2);
         stack.push(3);
         Assert.assertTrue(stack.pop() == 3);
-        Assert.assertTrue(stack.pop() == 2);
         stack.push(4);
+        stack.push(5);
+        Assert.assertTrue(stack.pop() == 5);
         Assert.assertTrue(stack.pop() == 4);
+        Assert.assertTrue(stack.pop() == 2);
         Assert.assertTrue(stack.pop() == 1);
         Assert.assertTrue(stack.isEmpty() == true);
     }
