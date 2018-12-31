@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="+addTwoNumbers">
+    <list default="true" id="334b4578-deef-4a57-ab46-5f8f1438fb01" name="Default" comment="加注释">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java" afterDir="false" />
     </list>
     <list id="0998c14d-6ce7-4b7a-96c7-29281d309466" name="ignore" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,26 +60,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="4" />
-          <entry key="java" value="181" />
+          <entry key="java" value="185" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="181" />
+          <entry key="JAVA" value="185" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="14176" />
-          <entry key="txt" value="129" />
+          <entry key="java" value="14341" />
+          <entry key="txt" value="135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14176" />
-          <entry key="PLAIN_TEXT" value="133" />
+          <entry key="JAVA" value="14341" />
+          <entry key="PLAIN_TEXT" value="139" />
         </counts>
       </usages-collector>
     </session>
@@ -90,10 +90,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state relative-caret-position="701">
+              <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -162,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/解释器/AddExpression.java" />
-        <option value="$PROJECT_DIR$/src/main/java/刷题/设计模式/解释器/VarExpression.java" />
         <option value="$PROJECT_DIR$/src/main/java/工具使用/apache/对象池/RedisPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/工具使用/apache/对象池/RedisFacotry.java" />
         <option value="$PROJECT_DIR$/src/main/java/工具使用/apache/对象池/User.java" />
@@ -196,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/java/刷题/算法/KmpTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/最长公共前缀.java" />
-        <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java" />
         <option value="$PROJECT_DIR$/src/main/java/rpc/transport/IClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/rpc/transport/IServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" />
@@ -213,6 +210,9 @@
         <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/TwoSum.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/AddTwoNumbers.java" />
         <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/KthSmallestElementInASortedMatrix.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java" />
       </list>
     </option>
   </component>
@@ -778,14 +778,7 @@
       <workItem from="1536225965238" duration="2118000" />
       <workItem from="1536284699571" duration="6007000" />
       <workItem from="1536305695053" duration="6640000" />
-      <workItem from="1546010508752" duration="8292000" />
-    </task>
-    <task id="LOCAL-00038" summary="+栈实现">
-      <created>1522238473249</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1522238473249</updated>
+      <workItem from="1546010508752" duration="9331000" />
     </task>
     <task id="LOCAL-00039" summary="+队列实现">
       <created>1522238892418</created>
@@ -1123,7 +1116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546242953754</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="加注释">
+      <created>1546244801405</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1546244801405</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1159,7 +1159,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="545831000" />
+    <option name="totallyTimeSpent" value="546870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1233,7 +1233,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="修改目录结构" />
     <MESSAGE value="同步异步&#10;阻塞非阻塞" />
     <MESSAGE value="es单元测试" />
     <MESSAGE value="+scroller" />
@@ -1258,7 +1257,8 @@
     <MESSAGE value="排序算法增加注释" />
     <MESSAGE value="增加注释" />
     <MESSAGE value="+addTwoNumbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="+addTwoNumbers" />
+    <MESSAGE value="加注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="加注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1276,12 +1276,6 @@
           <option name="timeStamp" value="284" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="297" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/刷题/数据结构/Queue.java</url>
           <line>61</line>
           <properties />
@@ -1294,7 +1288,7 @@
           <option name="timeStamp" value="319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java</url>
           <line>12</line>
           <properties />
           <option name="timeStamp" value="324" />
@@ -1373,13 +1367,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/积累/util/ByteUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/nio/channels/spi/AbstractInterruptibleChannel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -1495,20 +1482,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1727,8 +1700,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestSubstringWithoutRepeatingCharacters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        <state relative-caret-position="663">
+          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/KthSmallestElementInASortedMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/刷题/leetcode/LongestPalindromicSubstring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
         </state>
       </provider>
     </entry>
