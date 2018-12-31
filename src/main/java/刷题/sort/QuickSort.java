@@ -2,6 +2,7 @@ package 刷题.sort;
 
 /**
  * Desc: 快速排序法
+ * o(nlogn),o(logn)
  * Author: DLJ
  * Date: 2017-02-11
  * Time: 13:17
@@ -25,6 +26,7 @@ public class QuickSort implements SortStrategy {
         int   high      = end;
         int   length    = end - start + 1;
         int[] tempArray = new int[length];
+        //将要做排序的部分 copy至tempArray
         System.arraycopy(array, 0, tempArray, 0, length);
         for (int i = start; i < length; i++) {
             Integer t = tempArray[i];

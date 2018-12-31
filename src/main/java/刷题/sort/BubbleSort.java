@@ -3,6 +3,7 @@ package 刷题.sort;
 
 /**
  * Desc: 冒泡排序
+ * o(n^2),o(1)
  * Author: DLJ
  * Date: 2017-02-11
  * Time: 12:55
