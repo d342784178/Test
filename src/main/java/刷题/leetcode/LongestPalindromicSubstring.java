@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Desc: 找到的最长回型子串 如:abcba aba abcddcba
+ * https://leetcode-cn.com/problems/longest-palindromic-substring/
  * Author: DLJ
  * Date: 2017-02-14
  * Time: 11:39
