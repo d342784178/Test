@@ -61,6 +61,7 @@ public class Client {
                     }
 
                     SelectionKey selectionKey = iterator.next();
+                    //将当前事件移除
                     iterator.remove();
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                     socketChannel.configureBlocking(false);

@@ -42,9 +42,13 @@ public class Server {
     private void init() throws Exception {
         AtomicInteger       a                   = new AtomicInteger();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        //绑定端口
         serverSocketChannel.socket().bind(new InetSocketAddress(5555));
+        //切换为非阻塞状态
         serverSocketChannel.configureBlocking(false);
+        //初始化Selector
         Selector selector = Selector.open();
+        //注册ACCEPT事件到selector中
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         while (true) {
             int ready = selector.select(500);
@@ -54,10 +58,13 @@ public class Server {
                 Iterator<SelectionKey> iterator      = selectionKeys.iterator();
                 while (iterator.hasNext()) {
                     SelectionKey selectionKey = iterator.next();
+                    //将当前事件移除
                     iterator.remove();
                     if (selectionKey.isAcceptable()) {
+                        //获取当前客户端channel
                         SocketChannel socketChannel = serverSocketChannel.accept();
                         socketChannel.configureBlocking(false);
+                        //将当前客户端channel的READ事件注册到selector中
                         socketChannel.register(selector, SelectionKey.OP_READ);
                         System.out.println("client:" + socketChannel.socket().getRemoteSocketAddress() + " connected");
                     }
