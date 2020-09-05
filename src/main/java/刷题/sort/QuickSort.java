@@ -2,6 +2,7 @@ package 刷题.sort;
 
 /**
  * Desc: 快速排序法
+ * 分治思想，小得排左边，大的排右边。
  * o(nlogn),o(logn)
  * Author: DLJ
  * Date: 2017-02-11
@@ -37,8 +38,8 @@ public class QuickSort implements SortStrategy {
                 //小于 低位+1
                 array[low++] = t;
             }
-            array[low] = key;
         }
+        array[low] = key;
         sort(array, start, low - 1);
         sort(array, high + 1, end);
         return array;
