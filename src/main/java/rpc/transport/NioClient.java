@@ -1,12 +1,14 @@
 package rpc.transport;
 
-import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.UnpooledByteBufAllocator;
+import rpc.Intf;
+import rpc.ProxyFactory;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.Callable;
@@ -27,6 +29,27 @@ public class NioClient implements IClient {
     private ReadCallBackImpl readCallBack = new ReadCallBackImpl();
 
 
+    public static void main(String args[]) throws Exception {
+        NioClient nioClient = new NioClient();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                nioClient.connect("127.0.0.1", 9800);
+            }
+        }).start();
+        Intf           intfRpcClient = ProxyFactory.getRpcClientProxy(nioClient);
+        BufferedReader br            = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            System.out.println("Enter your value:");
+            br.readLine();
+            for (int i = 0; i < 10000; i++) {
+                String result = intfRpcClient.invoke("a", "b");
+            }
+            //System.out.println(result);
+        }
+
+    }
+
     @Override
     public void connect(String host, int port) {
         client = new Client(host, port, readCallBack);
@@ -38,26 +61,18 @@ public class NioClient implements IClient {
     }
 
     @Override
-    public Object send(Class cls, Method method, Object[] param) {
-        try {
-            return new FutureTask<Object>(new Callable<Object>() {
-                @Override
-                public Object call() throws Exception {
-                    CountDownFutureTask countDownFutureTask = new CountDownFutureTask();
-                    String              reqId               = readCallBack.register(countDownFutureTask);
-                    ReqEntity reqEntity = new ReqEntity(reqId, cls.getCanonicalName(),
-                            method.getName(), param);
-                    ByteBuf buffer = new UnpooledByteBufAllocator(false).buffer();
-                    reqEntity.outPut(buffer);
-                    client.write(buffer.array());
-                    FutureTask<Object> resFuture = new FutureTask<>(countDownFutureTask);
-                    resFuture.run();
-                    return resFuture.get();
-                }
-            }).get();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public Object send(Class cls, Method method, Object[] param) throws Exception {
+        long                start = System.currentTimeMillis();
+        CountDownFutureTask task  = new CountDownFutureTask();
+        String              reqId = readCallBack.register(task);
+        ReqEntity reqEntity = new ReqEntity(reqId, cls.getCanonicalName(),
+                method.getName(), param);
+        client.write(reqEntity);
+        FutureTask<Object> resFuture = new FutureTask<>(task);
+        resFuture.run();
+        Object o = resFuture.get();
+        System.out.println(System.currentTimeMillis() - start);
+        return o;
     }
 
     public class CountDownFutureTask implements Callable<Object> {
@@ -80,7 +95,7 @@ public class NioClient implements IClient {
         }
     }
 
-    public class ReadCallBackImpl implements Client.ReadCallBack {
+    public class ReadCallBackImpl implements ReadCallBack<ResEntity> {
         private Map<String, CountDownFutureTask> map = Maps.newConcurrentMap();
 
         public String register(CountDownFutureTask countDownFutureTask) {
@@ -90,30 +105,14 @@ public class NioClient implements IClient {
         }
 
         @Override
-        public void onRead(ByteBuf readBuf) {
-            //1.判断数据是否完整
-            // 协议头完整
-            if (readBuf.readableBytes() > 12) {
-                int reqIdLength   = readBuf.readInt();
-                int resTypeLength = readBuf.readInt();
-                int resLength     = readBuf.readInt();
-                //协议体完整
-                if (readBuf.readableBytes() > (reqIdLength + resTypeLength + resLength)) {
-                    ResEntity resEntity = ResEntity.read(readBuf, reqIdLength, resTypeLength, resLength);
-                    //2.countDownlatch.countDown()
-                    if (map.containsKey(resEntity.getReqId())) {
-                        CountDownFutureTask countDownFutureTask = map.get(resEntity.getReqId());
-                        try {
-                            countDownFutureTask.setResult(JSON.parseObject(resEntity.getRes(),
-                                    Class.forName(resEntity.getResType())));
-                        } catch (ClassNotFoundException e) {
-                            throw new RuntimeException(e);
-                        }
-                        countDownFutureTask.complate();
-                    }
+        public void onRead(Context context, List<ResEntity> resEntityList) {
+            for (ResEntity resEntity : resEntityList) {
+                if (map.containsKey(resEntity.getReqId())) {
+                    CountDownFutureTask countDownFutureTask = map.get(resEntity.getReqId());
+                    countDownFutureTask.setResult(resEntity.getRes());
+                    countDownFutureTask.complate();
                 }
             }
-
         }
     }
 }

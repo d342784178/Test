@@ -7,8 +7,9 @@ package rpc.transport;
  * Time: 15:45
  */
 public interface IServer {
-    void start();
+    void start() throws Exception;
 
-    void stop();
+    void stop() throws Exception;
+
 
 }

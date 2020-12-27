@@ -65,6 +65,7 @@ public class Client {
                     iterator.remove();
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                     socketChannel.configureBlocking(false);
+                    //channel除以非阻塞模式,可能尚未完成连接
                     if (selectionKey.isConnectable()) {
                         if (socketChannel.isConnectionPending()) {
                             socketChannel.finishConnect();
@@ -86,6 +87,7 @@ public class Client {
                     }
                     if (selectionKey.isWritable()) {
                         //改为主动读取式
+                        //TODO 阻塞等待有内容要写,直接返回等下下次写事件即可
                         ByteBuffer byteBuffer = awaitGetWrite(writeBuffer, 30, 50);
                         if (byteBuffer != null) {
                             int write = channel.write(byteBuffer);

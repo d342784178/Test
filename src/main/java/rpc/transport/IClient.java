@@ -11,6 +11,6 @@ import java.lang.reflect.Method;
 public interface IClient {
     void connect(String host, int port);
 
-    Object send(Class cls, Method method, Object[] param);
+    Object send(Class cls, Method method, Object[] param) throws Exception;
 
 }
