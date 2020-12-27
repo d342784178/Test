@@ -53,7 +53,7 @@ public class Server {
         serverSocket.register(acceptorSelector, SelectionKey.OP_ACCEPT);
 
         while (true) {
-            int acceptEventCount = acceptorSelector.select(100);
+            int acceptEventCount = acceptorSelector.select(1);
             if (acceptEventCount > 0) {
                 for (SelectionKey selectedKey : acceptorSelector.selectedKeys()) {
                     SocketChannel socketChannel = serverSocket.accept();
@@ -64,7 +64,7 @@ public class Server {
                 }
             }
 
-            int rwEventCount = rwSelector.select(100);
+            int rwEventCount = rwSelector.select(1);
             if (rwEventCount > 0) {
                 for (SelectionKey selectedKey : rwSelector.selectedKeys()) {
                     ServerContext context       = (ServerContext) selectedKey.attachment();

@@ -22,11 +22,10 @@ public class MessageEncoder {
         SocketChannel        socketChannel = (SocketChannel) selectionKey.channel();
         ByteBuffer           readBuf       = context.getReaderBuf();
         int                  read          = socketChannel.read(readBuf);
-        ArrayList<ReqEntity> reqs          = null;
+        ArrayList<ReqEntity> reqs          = Lists.newArrayList();
         if (read > 0) {
             readBuf.flip();
             while (readBuf.remaining() > 4) {
-                reqs = Lists.newArrayList();
                 readBuf.mark();
                 int reqIdLength      = readBuf.getInt();
                 int clasLength       = readBuf.getInt();
@@ -55,11 +54,10 @@ public class MessageEncoder {
         SocketChannel        socketChannel = (SocketChannel) selectionKey.channel();
         ByteBuffer           readBuf       = context.getReaderBuf();
         int                  read          = socketChannel.read(readBuf);
-        ArrayList<ResEntity> reqs          = null;
+        ArrayList<ResEntity> reqs          = Lists.newArrayList();
         if (read > 0) {
             readBuf.flip();
             while (readBuf.remaining() > 4) {
-                reqs = Lists.newArrayList();
                 readBuf.mark();
                 int reqIdLength   = readBuf.getInt();
                 int resTypeLength = readBuf.getInt();

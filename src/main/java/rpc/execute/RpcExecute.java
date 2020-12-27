@@ -29,15 +29,15 @@ public class RpcExecute {
         ArrayList<ResEntity> resultList = Lists.newArrayList();
         for (ReqEntity reqEntity : reqEntities) {
             Object target = map.get(reqEntity.getClsName());
-            //for (Method method : target.getClass().getMethods()) {
-            //    if (method.getName().equals(reqEntity.getMethodName())) {
-            //        Object result = method.invoke(target, reqEntity.getParam());
-            //        resultList.add(new ResEntity(reqEntity.getReqId(), result.getClass()
-            //                                                                 .getCanonicalName(), (String) result));
-            //        break;
-            //    }
-            //}
-            resultList.add(new ResEntity(reqEntity.getReqId(),String.class.getCanonicalName(),"ab"));
+            for (Method method : target.getClass().getMethods()) {
+                if (method.getName().equals(reqEntity.getMethodName())) {
+                    Object result = method.invoke(target, reqEntity.getParam());
+                    resultList.add(new ResEntity(reqEntity.getReqId(), result.getClass()
+                                                                             .getCanonicalName(), (String) result));
+                    break;
+                }
+            }
+            //resultList.add(new ResEntity(reqEntity.getReqId(),String.class.getCanonicalName(),"ab"));
         }
         return resultList;
     }

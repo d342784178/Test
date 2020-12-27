@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2e2d1d-b29d-4ce6-a94f-95f45f919e6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/Impl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/Intf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/ProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/execute/RpcExecute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/ClientContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/IOutPut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/MessageEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/ReadCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/ServerContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="9d2e2d1d-b29d-4ce6-a94f-95f45f919e6a" name="Default Changelist" comment="简易RPC NIO实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/基本使用/nio/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/execute/RpcExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/execute/RpcExecute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/IClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/IClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/IServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/IServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/MessageEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/MessageEncoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/NioClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/NioClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/NioServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/NioServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/ReqEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/ReqEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/ResEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/ResEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,11 +105,23 @@
       <workItem from="1608358219561" duration="502000" />
       <workItem from="1608360764817" duration="3702000" />
       <workItem from="1608365556393" duration="149000" />
-      <workItem from="1608365713689" duration="21772000" />
+      <workItem from="1608365713689" duration="23952000" />
     </task>
+    <task id="LOCAL-00001" summary="简易RPC NIO实现">
+      <created>1609051086580</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609051086580</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="简易RPC NIO实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="简易RPC NIO实现" />
   </component>
 </project>

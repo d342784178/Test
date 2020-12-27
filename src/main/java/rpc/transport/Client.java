@@ -46,7 +46,7 @@ public class Client {
         SelectionKey selectionKey = channel.register(rwSelector, SelectionKey.OP_CONNECT);
         context = new ClientContext(selectionKey);
         while (true) {
-            int rwEventCount = rwSelector.select(100);
+            int rwEventCount = rwSelector.select(1);
             if (rwEventCount > 0) {
                 for (SelectionKey selectedKey : rwSelector.selectedKeys()) {
                     SocketChannel socketChannel = (SocketChannel) selectedKey.channel();
