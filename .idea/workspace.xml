@@ -23,7 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2e2d1d-b29d-4ce6-a94f-95f45f919e6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/注解处理器/NameCheckerProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdk特性/jdk1_6/注解处理器/NameCheckerProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpc/transport/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +92,7 @@
       <recent name="rpc.transport" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AutoBoxDemo">
+  <component name="RunManager" selected="Application.NioServer">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -145,8 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AutoBoxDemo" />
         <item itemvalue="Application.NioServer" />
+        <item itemvalue="Application.AutoBoxDemo" />
         <item itemvalue="Application.NioClient" />
       </list>
     </recent_temporary>
@@ -188,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610269828366</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加注释">
+      <created>1610270052066</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610270052066</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +218,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="简易RPC NIO实现" />
     <MESSAGE value="增加插入式注解处理器实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加插入式注解处理器实现" />
+    <MESSAGE value="增加注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加注释" />
   </component>
 </project>

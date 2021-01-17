@@ -49,6 +49,7 @@ public class Server {
         serverSocket.bind(new InetSocketAddress(9800));
         Selector acceptorSelector = Selector.open();
         Selector rwSelector       = Selector.open();
+        //非阻塞式
         serverSocket.configureBlocking(false);
         serverSocket.register(acceptorSelector, SelectionKey.OP_ACCEPT);
 

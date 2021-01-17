@@ -41,7 +41,9 @@ public class Client {
     public void init() throws Exception {
         channel = SocketChannel.open();
         Selector rwSelector = Selector.open();
+        //阻塞式连接server
         channel.connect(new InetSocketAddress(host, port));
+        //server连接成功转为非阻塞式
         channel.configureBlocking(false);
         SelectionKey selectionKey = channel.register(rwSelector, SelectionKey.OP_CONNECT);
         context = new ClientContext(selectionKey);
