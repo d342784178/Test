@@ -1,23 +1,16 @@
-package rpc.transport;
+package rpc.transport.base;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.UnpooledByteBufAllocator;
-import rpc.execute.RpcExecute;
+import rpc.transport.context.Context;
+import rpc.transport.context.ServerContext;
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @link http://www.infoq.com/cn/articles/netty-threading-model
@@ -54,7 +47,7 @@ public class Server {
         serverSocket.register(acceptorSelector, SelectionKey.OP_ACCEPT);
 
         while (true) {
-            int acceptEventCount = acceptorSelector.select(1);
+            int acceptEventCount = acceptorSelector.selectNow();
             if (acceptEventCount > 0) {
                 for (SelectionKey selectedKey : acceptorSelector.selectedKeys()) {
                     SocketChannel socketChannel = serverSocket.accept();

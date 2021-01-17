@@ -1,11 +1,15 @@
-package rpc.transport;
+package rpc.client;
 
 import com.google.common.collect.Maps;
-import rpc.Intf;
-import rpc.ProxyFactory;
+import lombok.Getter;
+import rpc.user.Intf;
+import rpc.transport.base.Client;
+import rpc.transport.base.IClient;
+import rpc.transport.base.ReadCallBack;
+import rpc.transport.context.Context;
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.util.List;
@@ -25,44 +29,26 @@ public class NioClient implements IClient {
 
     public static final Charset UTF8 = Charset.forName("utf-8");
 
+    @Getter
+    private String serverHost;
+    @Getter
+    private int    serverPort;
+
     private Client           client;
     private ReadCallBackImpl readCallBack = new ReadCallBackImpl();
 
-
-    public static void main(String args[]) throws Exception {
-        NioClient nioClient = new NioClient();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                nioClient.connect("127.0.0.1", 9800);
-            }
-        }).start();
-        Intf           intfRpcClient = ProxyFactory.getRpcClientProxy(nioClient);
-        BufferedReader br            = new BufferedReader(new InputStreamReader(System.in));
-        while (true) {
-            System.out.println("Enter your value:");
-            br.readLine();
-            for (int i = 0; i < 10000; i++) {
-                String result = intfRpcClient.invoke("a", "b");
-            }
-            //System.out.println(result);
-        }
-
+    public static Intf genClient(String serverHost, int serverPort) throws Exception {
+        NioClient nioClient = new NioClient(serverHost, serverPort);
+        return ProxyFactory.getRpcClientProxy(nioClient);
     }
 
-    @Override
-    public void connect(String host, int port) {
-        client = new Client(host, port, readCallBack);
-        try {
-            client.init();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public NioClient(String serverHost, int serverPort) throws Exception {
+        client = new Client(serverHost, serverPort, readCallBack);
     }
 
     @Override
     public Object send(Class cls, Method method, Object[] param) throws Exception {
-        long                start = System.currentTimeMillis();
+        //long                start = System.currentTimeMillis();
         CountDownFutureTask task  = new CountDownFutureTask();
         String              reqId = readCallBack.register(task);
         ReqEntity reqEntity = new ReqEntity(reqId, cls.getCanonicalName(),
@@ -71,7 +57,7 @@ public class NioClient implements IClient {
         FutureTask<Object> resFuture = new FutureTask<>(task);
         resFuture.run();
         Object o = resFuture.get();
-        System.out.println(System.currentTimeMillis() - start);
+        //System.out.println(System.currentTimeMillis() - start);
         return o;
     }
 

@@ -1,7 +1,11 @@
-package rpc.transport;
+package rpc.transport.base;
 
 import com.google.common.collect.Lists;
+import rpc.transport.context.ClientContext;
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -27,24 +31,36 @@ public class Client {
         this.port = port;
     }
 
-    public Client(String host, int port) {
+    public Client(String host, int port) throws Exception {
         this.port = port;
         this.host = host;
+        init();
     }
 
-    public Client(String host, int port, ReadCallBack<ResEntity> readCallBack) {
+    public Client(String host, int port, ReadCallBack<ResEntity> readCallBack) throws Exception {
         this.port = port;
         this.host = host;
         this.readCallBack = readCallBack;
+        init();
     }
 
     public void init() throws Exception {
         channel = SocketChannel.open();
-        Selector rwSelector = Selector.open();
         //阻塞式连接server
         channel.connect(new InetSocketAddress(host, port));
         //server连接成功转为非阻塞式
         channel.configureBlocking(false);
+        new Thread(() -> {
+            try {
+                loop();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+    }
+
+    public void loop() throws IOException {
+        Selector     rwSelector   = Selector.open();
         SelectionKey selectionKey = channel.register(rwSelector, SelectionKey.OP_CONNECT);
         context = new ClientContext(selectionKey);
         while (true) {

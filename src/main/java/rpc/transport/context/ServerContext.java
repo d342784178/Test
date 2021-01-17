@@ -1,4 +1,7 @@
-package rpc.transport;
+package rpc.transport.context;
+
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
 import java.io.IOException;
 import java.nio.channels.SelectionKey;

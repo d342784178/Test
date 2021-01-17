@@ -1,10 +1,10 @@
-package rpc.execute;
+package rpc.transport.execute;
 
 import com.google.common.collect.Lists;
-import rpc.Impl;
-import rpc.Intf;
-import rpc.transport.ReqEntity;
-import rpc.transport.ResEntity;
+import rpc.user.Impl;
+import rpc.user.Intf;
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -37,7 +37,6 @@ public class RpcExecute {
                     break;
                 }
             }
-            //resultList.add(new ResEntity(reqEntity.getReqId(),String.class.getCanonicalName(),"ab"));
         }
         return resultList;
     }

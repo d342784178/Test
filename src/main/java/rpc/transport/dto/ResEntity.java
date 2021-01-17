@@ -1,7 +1,7 @@
-package rpc.transport;
+package rpc.transport.dto;
 
-import io.netty.buffer.ByteBuf;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import rpc.client.NioClient;
 
 import java.nio.ByteBuffer;
 

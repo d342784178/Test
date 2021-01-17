@@ -1,6 +1,12 @@
-package rpc.transport;
+package rpc.client;
 
-import rpc.execute.RpcExecute;
+import rpc.transport.execute.RpcExecute;
+import rpc.transport.base.IServer;
+import rpc.transport.base.ReadCallBack;
+import rpc.transport.base.Server;
+import rpc.transport.context.Context;
+import rpc.transport.dto.ReqEntity;
+import rpc.transport.dto.ResEntity;
 
 import java.util.List;
 
@@ -14,16 +20,11 @@ public class NioServer implements IServer, ReadCallBack<ReqEntity> {
 
     private Server server;
 
-    public static void main(String args[]) throws Exception {
-        new NioServer().start();
-    }
-
     @Override
     public void start() throws Exception {
         server = new Server(9800, this);
         server.init();
     }
-
 
     @Override
     public void stop() throws Exception {

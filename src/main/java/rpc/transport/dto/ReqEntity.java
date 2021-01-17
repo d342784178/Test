@@ -1,7 +1,8 @@
-package rpc.transport;
+package rpc.transport.dto;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import rpc.client.NioClient;
 
 import java.nio.ByteBuffer;
 

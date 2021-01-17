@@ -1,4 +1,4 @@
-package rpc;
+package rpc.user;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

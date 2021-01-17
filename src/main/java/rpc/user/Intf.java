@@ -1,6 +1,4 @@
-package rpc;
-
-import java.util.List;
+package rpc.user;
 
 /**
  * Desc:

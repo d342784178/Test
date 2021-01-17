@@ -1,4 +1,4 @@
-package rpc.transport;
+package rpc.transport.dto;
 
 import java.nio.ByteBuffer;
 

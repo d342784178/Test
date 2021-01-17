@@ -1,6 +1,7 @@
-package rpc;
+package rpc.client;
 
-import rpc.transport.IClient;
+import rpc.user.Intf;
+import rpc.transport.base.IClient;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -19,8 +20,6 @@ public class ProxyFactory {
                 .getClassLoader(), new Class[]{Intf.class}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                Impl impl = new Impl();
-                Object invoke = method.invoke(impl, args);
                 return rpcClient.send(method.getDeclaringClass(), method, args);
             }
         });

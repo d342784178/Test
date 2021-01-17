@@ -1,4 +1,4 @@
-package rpc.transport;
+package rpc.transport.base;
 
 import java.lang.reflect.Method;
 
@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
  * Time: 15:45
  */
 public interface IClient {
-    void connect(String host, int port);
 
     Object send(Class cls, Method method, Object[] param) throws Exception;
 
